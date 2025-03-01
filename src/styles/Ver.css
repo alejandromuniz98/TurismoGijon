@@ -1,0 +1,138 @@
+.ver-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.ver-header h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.ver-header p {
+  font-size: 1.1rem; /* Reducir tamaño de letra */
+  color: #666;
+  margin-top: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.carousel-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.destinos-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.destinos-grid {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.destino-item {
+    min-width: calc(95% / 3 - 15px);
+    min-height: 350px; /* Aumento de altura de la tarjeta */
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.destino-item h3 {
+  font-size: 1.5rem; /* Aumento de tamaño del título de las tarjetas */
+  font-family: 'Verdana', sans-serif; /* Cambio a una tipografía diferente */
+  font-weight: bold;
+  color: #333;
+  margin: 10px 0;
+}
+
+.destino-item p {
+  font-size: 1rem; /* Aumento del tamaño del texto de la descripción */
+  font-family: 'Verdana', sans-serif;
+  color: #666;
+  padding: 0 12px 12px;
+  margin: 0;
+}
+
+.destino-item:hover {
+  transform: scale(1.02);
+}
+
+.destino-img {
+  width: 100%;
+  height: 250px; /* Aumento de altura */
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+p {
+  font-size: 0.85rem;
+  color: #555;
+  padding: 0 8px 10px;
+  margin: 0;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2c3e50;
+  transition: transform 0.3s, color 0.3s;
+  font-size: 2.5rem; /* Aumento del tamaño de las flechas */
+  font-family: 'Arial', sans-serif;
+}
+
+.arrow:hover {
+  color: #e74c3c;
+  transform: scale(1.1);
+}
+
+@media (max-width: 1024px) {
+  .destinos-wrapper {
+    width: 95%;
+  }
+
+  .destino-item {
+    min-width: calc(100% / 2 - 10px);
+  }
+
+  .ver-header h2 {
+    font-size: 2rem;
+  }
+
+  .ver-header p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .destinos-wrapper {
+    width: 100%;
+  }
+
+  .destinos-grid {
+    gap: 10px;
+  }
+
+  .destino-item {
+    min-width: 100%;
+  }
+}
