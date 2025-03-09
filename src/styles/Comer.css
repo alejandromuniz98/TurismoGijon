@@ -1,33 +1,31 @@
 .comer {
-    font-family: 'Arial', sans-serif;
-    padding: 40px;
-    background-color: #f4ede4; /* Fondo más claro, tono crema */
-    margin: 0 auto;
-    max-width: 1200px;
+  padding: 20px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+  color: #333;
+  font-family: 'Arial', sans-serif;
   }
   
   .comer-header {
     text-align: center;
     margin-bottom: 40px;
-    background-color: #e6dac8; /* Fondo suave */
-    padding: 20px;
-    color: #2c3e50; /* Texto oscuro para buen contraste */
+    background-color: #f4f4f4;
+    color: #2c3e50;
     border-radius: 8px;
   }
   
   .comer-header h2 {
     font-size: 2rem;
     font-weight: bold;
-    color: #8b4513; /* Tono marrón cálido para destacar */
+    color: #2d3e50;
   }
   
   .comer-header p {
-    font-size: 1rem;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #5a3e1b; /* Marrón más oscuro para buena legibilidad */
+    margin: 0 auto;
   }
   
   .comer-list {
@@ -63,19 +61,18 @@
   }
   
   .plato-texto {
-    padding: 15px;
+    padding: 0px 15px;
   }
   
   .plato-texto h3 {
     font-size: 1.5rem;
-    font-weight: bold;
-    color: #6d3b12; /* Marrón oscuro para títulos */
-    margin-bottom: 8px;
+    color: #2d3e50;
+    margin-bottom: 5px;
   }
   
   .plato-texto p {
-    font-size: 0.95rem;
-    color: #444; /* Gris oscuro para mejor lectura */
+    font-size: 0.88rem;
     line-height: 1.5;
+    color: #555;
   }
   

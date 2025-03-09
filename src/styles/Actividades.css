@@ -1,9 +1,9 @@
 .actividades {
     font-family: 'Arial', sans-serif;
-    padding: 40px;
+    padding: 20px;
     background-color: #f4f4f4;
     margin: 0 auto;
-    max-width: 1200px; /* Máxima anchura para la sección */
+    max-width: 1200px;
   }
   
   .actividades-header {
@@ -12,25 +12,23 @@
   }
   
   .actividades-header h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
+    font-size: 2rem;
+    color: #2d3e50;
   }
   
   .actividades-header p {
-    font-size: 1.1rem; /* Reducir tamaño de letra */
-    color: #666;
-    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #555;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
   }
   
   .actividades-list {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    padding: 0 20px; /* Añadir márgenes por los lados */
+    padding: 0 20px;
   }
   
   .actividad {
@@ -41,12 +39,13 @@
   }
   
   .actividad-img {
-    width: 35%; /* Reducir el tamaño de las imágenes */
+    width: 35%;
     height: 230px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 20px;
     transition: transform 0.3s ease;
+    align-self: center;
   }
   
   .actividad-img:hover {
@@ -54,19 +53,19 @@
   }
   
   .actividad-texto {
-    width: 55%; /* Ajustar el ancho del texto */
+    width: 55%; 
   }
   
   .actividad-texto h3 {
-    font-size: 1.6rem; /* Reducir tamaño del título */
-    font-weight: bold;
-    color: #333;
     margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #2d3e50;
   }
   
   .actividad-texto p {
-    font-size: 1rem; /* Reducir tamaño de texto */
-    color: #555;
     line-height: 1.7;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #555;
   }
   

@@ -22,7 +22,7 @@ function Actividades() {
       <section id="que-hacer">
 
       <header className="actividades-header">
-        <h2>Actividades Imperdibles en Gijón</h2>
+        <h2>Actividades Imperdibles</h2>
         <p>Desde surf en la playa hasta rutas culturales, explora todo lo que Gijón tiene para ofrecerte en esta maravillosa ciudad.</p>
       </header>
 

@@ -42,9 +42,9 @@ const Ver = () => {
   return (
     <main>
       <section id="que-ver">
-      <header className="ver-header">
-        <h2>Descubre Gijón</h2>
-        <p>Explora los lugares más emblemáticos de la ciudad y vive la esencia de Gijón en cada rincón. Desde playas y parques hasta teatros y miradores, Gijón tiene una oferta turística que combina naturaleza, cultura e historia.</p>
+        <header className="ver-header">
+          <h2>Visitar</h2>
+          <p>Explora los lugares más emblemáticos de la ciudad y vive la esencia de Gijón en cada rincón. Desde playas y parques hasta teatros y miradores, Gijón tiene una oferta turística que combina naturaleza, cultura e historia.</p>
         </header>
         <div className="carousel-container">
           <button className="arrow left" onClick={prevSlide}>&#9665;</button>

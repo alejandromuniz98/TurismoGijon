@@ -1,0 +1,27 @@
+.politica-privacidad {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+}
+
+.politica-privacidad h1 {
+    font-size: 2rem;
+    color: #2d3e50;
+    margin-bottom: 20px;
+}
+
+.privacy-text p, .privacy-text h2 {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.privacy-text h2 {
+    font-size: 1.25rem;
+    color: #2d3e50;
+}
+
+.privacy-text p {
+    font-size: 1rem;
+}
