@@ -7,7 +7,7 @@ import guppyImage from '../images/guppy.jpg';
 import walkingImage from '../images/walking.jpg';
 
 const Moverse = () => {
-  const [activeTab, setActiveTab] = useState('autobus');
+  const [activeTab, setActiveTab] = useState('bici');
 
   return (
     <section id="moverse">

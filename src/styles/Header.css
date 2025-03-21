@@ -87,11 +87,13 @@
   .top-bar {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
   }
 
   .nav-bar ul {
     flex-direction: column;
     gap: 10px;
+  }
+  .logo {
+    display: none;
   }
 }

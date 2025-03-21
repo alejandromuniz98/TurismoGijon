@@ -106,3 +106,21 @@
   margin: 0;
   color: #ffffff;
 }
+
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .footer-explora, .footer-info, .footer-nosotros {
+    text-align: center;
+  }
+
+  .footer-explora ul {
+    padding: 0;
+  }
+}

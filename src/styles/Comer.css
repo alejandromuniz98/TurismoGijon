@@ -1,78 +1,84 @@
 .comer {
-  padding: 20px 20px;
+  padding: 20px;
   background-color: #f4f4f4;
   text-align: center;
   color: #333;
   font-family: 'Arial', sans-serif;
-  }
-  
-  .comer-header {
-    text-align: center;
-    margin-bottom: 40px;
-    background-color: #f4f4f4;
-    color: #2c3e50;
-    border-radius: 8px;
-  }
-  
-  .comer-header h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #2d3e50;
-  }
-  
-  .comer-header p {
-    font-size: 0.9rem;
-    line-height: 1.6;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+}
+
+.comer-header {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.comer-header h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d3e50;
+}
+
+.comer-header p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comer-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.plato {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.plato:hover {
+  transform: scale(1.05);
+}
+
+.plato-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.plato-texto {
+  padding: 15px;
+}
+
+.plato-texto h3 {
+  font-size: 1.4rem;
+  color: #2d3e50;
+  margin-bottom: 10px;
+}
+
+.plato-texto p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* Responsividad */
+
+/* Dos platos por fila en tabletas */
+@media (max-width: 900px) {
   .comer-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-    padding: 0 20px;
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  .plato {
-    width: 28%;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease;
+}
+
+/* Un plato por fila en móviles pequeños */
+@media (max-width: 600px) {
+  .comer-list {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
-  .plato:hover {
-    transform: scale(1.05);
-  }
-  
-  .plato-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
-  
-  .plato-img:hover {
-    opacity: 0.8;
-  }
-  
-  .plato-texto {
-    padding: 0px 15px;
-  }
-  
-  .plato-texto h3 {
-    font-size: 1.5rem;
-    color: #2d3e50;
-    margin-bottom: 5px;
-  }
-  
-  .plato-texto p {
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: #555;
-  }
-  
+}

@@ -120,5 +120,9 @@
     .cta p {
       font-size: 1rem;
     }
+
+    .image-section img {
+      max-width: 90%; 
+    }
   }
   
