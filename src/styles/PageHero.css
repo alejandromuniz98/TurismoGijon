@@ -1,0 +1,20 @@
+.page-hero {
+  margin: 0 0 1.5rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.page-hero__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.hub-inner > .page-hero:first-of-type,
+.legal-inner > .page-hero:first-of-type,
+.contacto-inner > .page-hero:first-of-type {
+  margin-top: 0.5rem;
+}

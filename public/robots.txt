@@ -1,3 +1,5 @@
-# https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Allow: /
+
+# SPA: el contenido se renderiza en el cliente; Google ejecuta JavaScript.
+Sitemap: https://turismoporgijon.web.app/sitemap.xml

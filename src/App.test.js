@@ -1,8 +1,9 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
 
-test('renders learn react link', () => {
+test("renderiza la cabecera del sitio", async () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const titles = await screen.findAllByText(/Turismo Gijón/i);
+  expect(titles.length).toBeGreaterThanOrEqual(1);
+  expect(document.querySelector(".site-header__title")).toHaveTextContent(/Turismo Gijón/i);
 });

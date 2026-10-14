@@ -1,0 +1,160 @@
+.gijon-map-wrap {
+  position: relative;
+  height: min(640px, 72vh);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin: 1.25rem 0 1.75rem;
+  border: 1px solid rgba(26, 31, 36, 0.08);
+  background: linear-gradient(180deg, #e8f0f2 0%, #f5f1ea 100%);
+}
+
+.gijon-map {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.leaflet-container {
+  font-family: var(--font-sans);
+  background: #e8f0f2;
+}
+
+.gijon-map-marker {
+  background: transparent;
+  border: none;
+}
+
+.gijon-map-marker__pin {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0 auto;
+  border-radius: 50% 50% 50% 0;
+  background: var(--marker-color, var(--color-accent));
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(26, 31, 36, 0.35);
+  transform: rotate(-45deg);
+  position: relative;
+}
+
+.gijon-map-marker__pin::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.gijon-map-popup .leaflet-popup-content-wrapper {
+  border-radius: 10px;
+  box-shadow: 0 10px 28px rgba(26, 31, 36, 0.16);
+  padding: 0;
+}
+
+.gijon-map-popup .leaflet-popup-content {
+  margin: 0.85rem 1rem 0.95rem;
+  min-width: 180px;
+  line-height: 1.4;
+}
+
+.gijon-map-popup__cat {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--marker-color, var(--color-accent));
+  margin-bottom: 0.25rem;
+}
+
+.gijon-map-popup__title {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--color-text);
+  line-height: 1.25;
+}
+
+.gijon-map-popup__note {
+  margin: 0.4rem 0 0;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.gijon-map-popup__links {
+  margin: 0.55rem 0 0;
+  font-size: 0.88rem;
+}
+
+.gijon-map-popup__links a,
+.gijon-map-popup__link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.gijon-map-popup__links a:hover,
+.gijon-map-popup__links a:focus-visible,
+.gijon-map-popup__link:hover,
+.gijon-map-popup__link:focus-visible {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+.gijon-map-legend {
+  position: absolute;
+  z-index: 400;
+  left: 0.75rem;
+  bottom: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.65rem;
+  margin: 0;
+  padding: 0.55rem 0.7rem;
+  list-style: none;
+  max-width: min(92%, 420px);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(26, 31, 36, 0.12);
+  border: 1px solid rgba(26, 31, 36, 0.06);
+}
+
+.gijon-map-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.78rem;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.gijon-map-legend__swatch {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 640px) {
+  .gijon-map-wrap {
+    height: min(520px, 68vh);
+    border-radius: 10px;
+  }
+
+  .gijon-map-legend {
+    left: 0.5rem;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    max-width: none;
+    gap: 0.35rem 0.55rem;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .gijon-map-legend__item {
+    font-size: 0.72rem;
+  }
+}

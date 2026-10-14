@@ -1,6 +1,6 @@
 {
-  "short_name": "Gijón",
-  "name": "Turismo en Gijón",
+  "short_name": "Turismo Gijón",
+  "name": "Turismo Gijón — Guía de viaje",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
+  "theme_color": "#0d6e6e",
   "background_color": "#ffffff"
 }

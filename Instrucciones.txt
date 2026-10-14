@@ -1,0 +1,147 @@
+Actúa como un desarrollador web senior + experto en SEO + experto en monetización con Google AdSense.
+
+Tienes acceso completo a mi código actual de la web: https://turismoporgijon.web.app/
+
+Tu objetivo es RECONSTRUIR y MEJORAR toda la aplicación para maximizar tráfico orgánico (SEO) y preparar la web para monetización futura con Google AdSense.
+
+IMPORTANTE:
+
+No quiero una web básica, quiero una web optimizada para posicionar en Google.
+Prioriza rendimiento, SEO técnico, estructura de contenidos y experiencia de usuario.
+Mantén Firebase como hosting, pero optimiza todo lo demás.
+
+========================================
+
+ESTRUCTURA GENERAL DE LA WEB
+========================================
+
+Rediseña la arquitectura con estas secciones:
+
+Inicio
+Qué ver en Gijón
+Playas
+Restaurantes
+Guías
+Blog
+
+Cada sección debe tener su propia página optimizada SEO.
+
+Crear sistema de rutas limpias:
+
+/que-ver-gijon-1-dia
+/mejores-playas-gijon
+/donde-comer-gijon
+etc.
+
+Implementar:
+
+Meta titles dinámicos optimizados con keywords
+Meta descriptions únicas por página
+Etiquetas H1, H2, H3 bien estructuradas
+Sitemap.xml generado automáticamente
+robots.txt optimizado
+Open Graph (para redes sociales)
+Schema markup (Article, TouristDestination)
+
+Optimizar velocidad:
+
+Lazy loading de imágenes
+Compresión de assets
+Código limpio y modular
+
+Rediseñar la UI para que parezca una web profesional:
+
+Diseño moderno tipo blog de viajes
+Hero con imagen grande en portada
+Tarjetas de artículos (cards)
+Tipografía clara y jerarquía visual
+Responsive 100% (móvil prioritario)
+
+Añadir:
+
+Menú claro
+Breadcrumbs (muy importante para SEO)
+Footer completo
+
+Implementar un sistema escalable para artículos (tipo blog):
+
+Cada artículo debe incluir:
+
+Título SEO (H1)
+Introducción optimizada
+Secciones con H2/H3
+Imágenes con ALT optimizado
+Enlaces internos automáticos
+
+Crear al menos estos artículos base:
+
+Qué ver en Gijón en 1 día
+Mejores playas de Gijón
+Dónde comer en Gijón
+Qué hacer en Gijón con niños
+Qué ver en Gijón gratis
+Gijón en 2 días
+Qué hacer en Gijón cuando llueve
+
+Los artículos deben ser largos (1000+ palabras), bien estructurados y optimizados para SEO.
+
+Optimizar textos para keywords como:
+
+qué ver en Gijón
+turismo Gijón
+playas Gijón
+restaurantes Gijón
+
+Incluir:
+
+Listas
+Consejos prácticos
+FAQs (para SEO)
+Contenido útil real (no relleno)
+
+Añadir funcionalidades que aumenten el valor SEO:
+
+Mapas interactivos (lugares turísticos)
+Sección de “rutas en Gijón”
+Comparativas (mejores playas, restaurantes)
+Artículos tipo:
+“Errores al visitar Gijón”
+“Lugares secretos de Gijón”
+
+Preparar espacios para anuncios (sin saturar):
+
+Banner entre párrafos
+Sidebar (si aplica)
+Footer
+
+IMPORTANTE:
+No activar anuncios todavía, solo dejar preparado el sistema para insertar fácilmente Google AdSense.
+
+Crear:
+
+Política de privacidad
+Política de cookies
+Aviso legal
+Implementar enlazado interno automático entre artículos
+Añadir artículos relacionados
+Optimizar densidad de keywords (sin sobreoptimizar)
+URLs amigables
+
+El objetivo NO es solo que la web funcione.
+
+El objetivo es:
+
+Posicionar en Google
+Conseguir tráfico orgánico
+Preparar la web para generar ingresos con AdSense
+
+========================================
+
+Entrega:
+
+Código completo optimizado
+Estructura clara de carpetas
+Ejemplo de varios artículos ya implementados
+Explicación breve de cómo añadir nuevos artículos fácilmente
+
+No hagas una solución simple. Haz una web preparada para escalar tráfico real.

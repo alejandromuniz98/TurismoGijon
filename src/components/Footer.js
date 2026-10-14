@@ -1,47 +1,98 @@
-import React from 'react';
-import '../styles/Footer.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import AdSlot from "./ads/AdSlot";
+import { FOOTER_STRIP } from "../images/assets";
+import "../styles/Footer.css";
 
 function Footer() {
-    return (
-        <footer className="footer">
-            <div className="footer-content">
-                <div className="footer-explora">
-                    <h4>Explora</h4>
-                    <ul>
-                        <li><a href="/">Inicio</a></li>
-                        <li><a href="/ver">Ver</a></li>
-                        <li><a href="/actividades">Actividades</a></li>
-                        <li><a href="/comer">Comer</a></li>
-                        <li><a href="/moverse">Moverse</a></li>
-                        <li><a href="/planes">Planes</a></li>
-                    </ul>
-                </div>
-                <div className="footer-info">
-                    <h4>Información</h4>
-                    <p>
-                        Esta página web es una fuente de información sobre Gijón. 
-                        No pertenece a ningún organismo oficial y su propósito es únicamente informativo. La información proporcionada 
-                        es de carácter general y se recomienda siempre consultar fuentes oficiales para obtener datos actualizados.
-                    </p>
-                    <p>
-                        Todos los contenidos presentados en este sitio están sujetos a derechos de autor y no deben ser reproducidos sin autorización.
-                    </p>
-                </div>
-                <div className="footer-nosotros">
-                    <h4>Nosotros</h4>
-                    <div className="footer-privacy">
-                        <a href="/politica-privacidad">Política de Privacidad</a>
-                    </div>
-                    <div className="footer-contacto">
-                        <a href="/contacto">Contacto</a>
-                    </div>
-                </div>
-            </div>
-            <div className="footer-bottom">
-                <p>&copy; 2025 Todos los derechos reservados.</p>
-            </div>
-        </footer>
-    );
+  return (
+    <footer className="site-footer">
+      <div className="site-footer__inner">
+        <AdSlot variant="footer" slotKey="global-footer" />
+
+        <figure className="site-footer__photo">
+          <img src={FOOTER_STRIP.src} alt={FOOTER_STRIP.alt} width={1200} height={360} loading="lazy" decoding="async" />
+        </figure>
+
+        <div className="site-footer__grid">
+          <div>
+            <h2 className="site-footer__heading">Secciones</h2>
+            <ul className="site-footer__list">
+              <li>
+                <Link to="/">Inicio</Link>
+              </li>
+              <li>
+                <Link to="/que-ver-gijon">Qué ver en Gijón</Link>
+              </li>
+              <li>
+                <Link to="/playas-gijon">Playas</Link>
+              </li>
+              <li>
+                <Link to="/restaurantes-gijon">Restaurantes</Link>
+              </li>
+              <li>
+                <Link to="/guias">Guías</Link>
+              </li>
+              <li>
+                <Link to="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link to="/rutas-en-gijon">Rutas</Link>
+              </li>
+              <li>
+                <Link to="/mapa-turistico-gijon">Mapa turístico</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="site-footer__heading">Guías útiles</h2>
+            <ul className="site-footer__list">
+              <li>
+                <Link to="/que-ver-gijon-1-dia">Gijón en 1 día</Link>
+              </li>
+              <li>
+                <Link to="/mejores-playas-gijon">Mejores playas</Link>
+              </li>
+              <li>
+                <Link to="/donde-comer-gijon">Dónde comer</Link>
+              </li>
+              <li>
+                <Link to="/gijon-con-ninos">Con niños</Link>
+              </li>
+              <li>
+                <Link to="/gijon-cuando-llueve">Si llueve</Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="site-footer__heading">Legal y contacto</h2>
+            <ul className="site-footer__list">
+              <li>
+                <Link to="/contacto">Contacto</Link>
+              </li>
+              <li>
+                <Link to="/politica-privacidad">Política de privacidad</Link>
+              </li>
+              <li>
+                <Link to="/politica-cookies">Política de cookies</Link>
+              </li>
+              <li>
+                <Link to="/aviso-legal">Aviso legal</Link>
+              </li>
+            </ul>
+            <p className="site-footer__note">
+              Información orientativa sobre turismo en Gijón. Verifica horarios y normas en fuentes oficiales antes de
+              viajar.
+            </p>
+          </div>
+        </div>
+
+        <div className="site-footer__bottom">
+          <p>&copy; {new Date().getFullYear()} Turismo Gijón. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+  );
 }
 
 export default Footer;
