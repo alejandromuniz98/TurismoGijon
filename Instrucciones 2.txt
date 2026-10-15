@@ -1,0 +1,794 @@
+# PROYECTO: AUDITORÍA, RECONSTRUCCIÓN Y OPTIMIZACIÓN INTEGRAL DE TURISMO POR GIJÓN
+
+## 1. TU PAPEL Y OBJETIVO PRINCIPAL
+
+Actúa como un equipo multidisciplinar formado por:
+
+- Un desarrollador web senior especializado en arquitectura frontend, backend y aplicaciones modernas.
+- Un especialista en SEO técnico y posicionamiento orgánico en Google.
+- Un especialista en SEO editorial y estrategia de contenidos turísticos.
+- Un diseñador UX/UI especializado en webs de viajes y turismo.
+- Un especialista en rendimiento web, accesibilidad y Core Web Vitals.
+- Un experto en Google AdSense, privacidad web y monetización de contenidos.
+
+Tienes acceso al repositorio y al código fuente completo de mi aplicación actual:
+
+https://turismoporgijon.web.app/
+
+La web está alojada en Firebase Hosting y está dedicada al turismo en Gijón, Asturias, España.
+
+Mi objetivo es transformar esta aplicación en una guía turística de referencia sobre Gijón que consiga tráfico orgánico de Google y que, cuando cumpla los requisitos correspondientes, pueda monetizarse mediante Google AdSense.
+
+**No quiero únicamente un análisis, una lista de recomendaciones, una maqueta visual o fragmentos de código. Quiero que inspecciones el proyecto existente, tomes decisiones técnicas justificadas, implementes las mejoras directamente en el repositorio y dejes una aplicación funcional, comprobada y lista para desplegar.**
+
+No afirmes que has implementado, probado, publicado o validado algo si realmente no lo has hecho.
+
+## 2. REGLAS FUNDAMENTALES DE TRABAJO
+
+Antes de modificar nada:
+
+1. Inspecciona todo el repositorio y comprende la arquitectura actual.
+2. Identifica el framework, el sistema de rutas, el proceso de compilación, la configuración de Firebase Hosting, la gestión de contenidos y las dependencias.
+3. Examina las páginas existentes, sus textos, imágenes, enlaces y funcionalidades.
+4. Identifica errores, contenido duplicado, páginas incompletas, problemas de renderizado y oportunidades de mejora.
+5. Conserva las funcionalidades útiles y el contenido válido de la aplicación actual.
+6. No elimines contenido, rutas o características existentes sin una razón concreta.
+7. Crea un plan de implementación priorizado y ejecútalo.
+
+No sustituyas toda la tecnología automáticamente. Si la arquitectura actual puede optimizarse razonablemente, mantenla. Si detectas que una arquitectura diferente mejoraría sustancialmente el SEO, la renderización o el mantenimiento, evalúa la migración y ejecútala solo si está justificada.
+
+Antes de realizar cambios importantes, conserva una referencia del estado inicial para poder revisar las modificaciones.
+
+No te limites a explicarme cómo hacer los cambios: realiza el trabajo en el código siempre que tus herramientas te lo permitan.
+
+---
+
+# 3. INVESTIGACIÓN Y AUDITORÍA SEO INICIAL
+
+Realiza una auditoría de la web actual y documenta:
+
+- Arquitectura y jerarquía de páginas.
+- URLs actuales y rutas internas.
+- Renderizado del contenido y accesibilidad para los buscadores.
+- Títulos SEO, metadescripciones y encabezados.
+- Enlaces internos y posibles enlaces rotos.
+- Sitemap y robots.txt.
+- URLs canónicas y posibles duplicados.
+- Imágenes, formatos, dimensiones y textos alternativos.
+- Rendimiento y experiencia móvil.
+- Accesibilidad.
+- Seguridad y configuración de Firebase.
+- Preparación para Google Search Console y Google AdSense.
+- Calidad, originalidad y utilidad del contenido existente.
+
+Si dispones de acceso a Internet, consulta documentación oficial actualizada de Google Search Central, Google AdSense, Firebase y web.dev.
+
+No inventes datos sobre el tráfico, el posicionamiento, las búsquedas o los competidores. Si no tienes acceso a Google Search Console o a herramientas de analítica, indícalo claramente y distingue las comprobaciones técnicas de las hipótesis.
+
+Investiga las intenciones de búsqueda relacionadas con el turismo en Gijón. Identifica oportunidades para una web especializada en un destino local, priorizando búsquedas que puedan resolverse con contenido útil y diferenciador.
+
+No prometas alcanzar una posición concreta en Google ni garantizar ingresos.
+
+---
+
+# 4. ARQUITECTURA Y ESTRUCTURA DE LA WEB
+
+Diseña una arquitectura clara, escalable y fácil de navegar.
+
+
+No es obligatorio que todas las secciones tengan una página independiente si no aportan valor. Evita crear categorías vacías o páginas casi idénticas.
+
+Las URLs deben ser cortas, descriptivas, estables y comprensibles.
+
+Ejemplos:
+
+/que-ver-en-gijon/
+
+/que-ver-gijon-1-dia/
+
+/gijon-en-dos-dias/
+
+/mejores-playas-gijon/
+
+
+
+Adapta los ejemplos a las rutas existentes y a una estrategia coherente. No cambies las URLs innecesariamente si ya existen páginas que puedan tener enlaces o posicionamiento.
+
+Si cambias una URL, configura una redirección permanente apropiada cuando corresponda y evita cadenas de redirecciones.
+
+Implementa una navegación intuitiva, breadcrumbs, páginas de categorías útiles, artículos relacionados y un footer completo.
+
+Todas las páginas importantes deben ser accesibles mediante enlaces internos normales y no depender exclusivamente de búsquedas internas, botones con JavaScript o interacciones que Google no pueda descubrir fácilmente.
+
+---
+
+# 5. RENDERIZADO, INDEXACIÓN Y SEO TÉCNICO
+
+Esta sección es prioritaria.
+
+## 5.1. Renderizado
+
+Comprueba si el contenido principal está disponible en el HTML inicial o si depende completamente de JavaScript.
+
+Si el proyecto utiliza una SPA, evalúa si conviene implementar generación estática de páginas, renderizado del lado del servidor o una arquitectura híbrida.
+
+Para una web turística con numerosos artículos, prioriza una solución que permita:
+
+- Renderizar el contenido principal de cada página de forma fiable.
+- Generar títulos y metadatos específicos.
+- Ofrecer URLs independientes para cada artículo.
+- Permitir el acceso directo a las rutas.
+- Evitar errores de hidratación o renderizado.
+- Mantener un despliegue compatible con Firebase Hosting.
+- Facilitar la publicación de nuevo contenido.
+
+No migres de framework sin justificarlo. Si decides migrar, completa la migración y deja instrucciones de despliegue.
+
+## 5.2. Metadatos
+
+Implementa por página:
+
+- Título SEO único.
+- Meta descripción específica.
+- URL canónica absoluta.
+- Un H1 principal claro.
+- Jerarquía lógica de H2 y H3.
+- Open Graph.
+- Metadatos sociales cuando aporten valor.
+- Idioma del documento correctamente declarado como español.
+- Atributos de idioma adicionales solo si existen versiones reales en otros idiomas.
+
+No repitas el mismo título o descripción en todas las páginas.
+
+Evita el keyword stuffing, las listas artificiales de palabras clave y los títulos engañosos.
+
+## 5.3. Sitemap y robots.txt
+
+Genera un sitemap XML correcto que incluya las páginas públicas, canónicas e indexables.
+
+Excluye páginas duplicadas, rutas internas, páginas de administración y páginas que no deban indexarse.
+
+Configura robots.txt correctamente, sin bloquear recursos necesarios para renderizar la web ni impedir el rastreo de páginas que se quieran posicionar.
+
+Incluye la referencia al sitemap en robots.txt.
+
+No utilices la fecha de modificación de forma engañosa ni actualices todas las fechas sin que el contenido haya cambiado realmente.
+
+## 5.4. Canonical, errores y redirecciones
+
+Revisa:
+
+- Duplicados entre distintas URLs.
+- Versiones con y sin barra final.
+- Rutas inexistentes.
+- Redirecciones.
+- Respuestas HTTP.
+- Errores 404.
+- Página de error útil para el usuario.
+- Rutas que devuelven incorrectamente un código 200 cuando el contenido no existe.
+
+No bloquees páginas útiles con noindex por error.
+
+## 5.5. Datos estructurados
+
+Implementa únicamente datos estructurados adecuados al contenido real.
+
+Evalúa:
+
+- Article o BlogPosting para artículos.
+- BreadcrumbList para migas de pan.
+- Organization cuando represente correctamente al proyecto.
+- TouristDestination solo cuando la entidad y el contenido justifiquen su uso.
+- Otros tipos únicamente si cumplen sus requisitos reales.
+
+Los datos estructurados deben coincidir con el contenido visible.
+
+No inventes valoraciones, reseñas, precios, autores, fechas, información empresarial ni datos turísticos.
+
+No prometas resultados enriquecidos por implementar Schema.
+
+---
+
+# 6. GOOGLE SEARCH CONSOLE Y MEDICIÓN
+
+Deja el proyecto preparado para su correcta integración con Google Search Console.
+
+Documenta cómo:
+
+1. Verificar la propiedad.
+2. Enviar el sitemap.
+3. Inspeccionar las URLs importantes.
+4. Comprobar su indexación.
+5. Detectar errores de rastreo.
+6. Consultar impresiones, clics, CTR y posición media.
+7. Identificar consultas que ya generen impresiones.
+8. Detectar páginas con muchas impresiones y pocos clics.
+9. Evaluar qué artículos merecen mejoras.
+
+No afirmes que una página está indexada por el simple hecho de que exista en el código.
+
+Si se incorpora analítica, utiliza una solución adecuada, minimiza los datos recogidos y configura correctamente el consentimiento cuando corresponda.
+
+No añadas credenciales, tokens ni identificadores ficticios. Si necesito introducir valores manualmente, documenta qué variables debo configurar y dónde.
+
+---
+
+# 7. ESTRATEGIA SEO EDITORIAL
+
+El objetivo no es publicar muchos artículos por publicar. Es construir una biblioteca de guías que respondan a las necesidades reales de las personas que visitan Gijón.
+
+Investiga y prioriza las consultas por intención de búsqueda, relevancia, competencia y capacidad de ofrecer información diferencial.
+
+Organiza los contenidos por grupos temáticos.
+
+## Grupo A: Guía principal de Gijón
+
+- Qué ver en Gijón.
+- Qué ver en Gijón en un día.
+- Gijón en dos días.
+- Qué hacer en Gijón durante un fin de semana.
+- Lugares imprescindibles de Gijón.
+- Consejos para visitar Gijón por primera vez.
+
+## Grupo B: Actividades
+
+- Qué hacer en Gijón gratis.
+- Qué hacer en Gijón con niños.
+- Qué hacer en Gijón cuando llueve.
+- Planes para parejas.
+- Actividades al aire libre.
+- Planes culturales.
+
+## Grupo C: Playas y naturaleza
+
+- Mejores playas de Gijón.
+- Comparativa de playas.
+- Paseos costeros.
+- Miradores.
+- Esculturas y lugares singulares.
+- Rutas a pie.
+
+## Grupo D: Gastronomía
+
+- Platos típicos asturianos.
+- Qué comer en Gijón.
+- Guía de sidrerías y gastronomía.
+- Cómo disfrutar de la gastronomía local.
+- Recomendaciones de establecimientos, cuando estén verificadas.
+
+## Grupo E: Información práctica
+
+- Dónde aparcar en Gijón.
+- Cómo llegar a Gijón.
+- Cómo desplazarse por la ciudad.
+- Cuánto tiempo dedicar a cada visita.
+- Qué tener en cuenta en una visita familiar.
+- Cómo organizar una escapada económica.
+
+No publiques automáticamente todos estos artículos. Valida primero la intención de búsqueda, la calidad de la información y la posibilidad de crear una página realmente útil.
+
+Evita canibalizar palabras clave creando múltiples páginas que respondan prácticamente a la misma pregunta.
+
+Diseña un calendario editorial realista y prioriza las páginas con mayor potencial.
+
+---
+
+# 8. CONTENIDO: CALIDAD, ORIGINALIDAD Y UTILIDAD
+
+El contenido es una de las partes más importantes del proyecto.
+
+No quiero artículos creados únicamente para alcanzar una longitud determinada, repetir palabras clave o aparentar autoridad.
+
+Cada guía debe aportar información útil, verificable y organizada.
+
+Cuando la información disponible lo permita, incluye:
+
+- Introducción breve que responda a la pregunta principal.
+- Resumen de lo que encontrará el lector.
+- Recomendaciones prácticas.
+- Itinerario o pasos concretos.
+- Distancias y tiempos estimados, indicando que son aproximados cuando proceda.
+- Mapa o enlaces a mapas.
+- Información sobre accesibilidad.
+- Costes y horarios solo cuando estén verificados.
+- Consejos específicos.
+- Alternativas según el perfil del visitante.
+- Enlaces a otras guías relevantes.
+- Preguntas frecuentes que resuelvan dudas reales.
+- Fecha de actualización cuando se haya revisado realmente el contenido.
+
+No inventes información turística, experiencias personales, visitas realizadas, horarios, precios, establecimientos, opiniones ni estadísticas.
+
+Si no se ha comprobado personalmente un lugar, no escribas en primera persona como si se hubiera visitado.
+
+Cuando una información pueda cambiar, incluye fuentes fiables y una fecha de comprobación si resulta útil.
+
+Utiliza fuentes oficiales, municipales, culturales y de los propios establecimientos cuando corresponda.
+
+No copies textos de otras guías. No parafrasees superficialmente artículos de la competencia para producir contenido aparentemente original.
+
+No generes decenas de artículos similares mediante sustitución automática de nombres de barrios o lugares.
+
+No es necesario que todos los artículos tengan más de 1.000 palabras. La extensión debe depender de la necesidad del usuario y de la información que pueda ofrecerse con rigor.
+
+## Información diferencial
+
+Siempre que sea posible, incorpora valor que no se limite a repetir información genérica:
+
+- Rutas creadas y organizadas específicamente para la web.
+- Comparativas con criterios explícitos.
+- Mapas con paradas y distancias.
+- Itinerarios alternativos.
+- Consejos prácticos contrastados.
+- Fotografías propias o con licencias adecuadas.
+- Tablas útiles.
+- Información sobre accesibilidad y movilidad.
+- Recomendaciones para diferentes tipos de visitantes.
+
+No afirmes que una guía es original por añadir una introducción genérica o cambiar algunas palabras.
+
+---
+
+# 9. REDISEÑO VISUAL Y EXPERIENCIA DE USUARIO
+
+Rediseña la web con una estética moderna, profesional, clara y coherente con un destino costero como Gijón.
+
+El diseño debe transmitir confianza y facilitar la consulta de información.
+
+Requisitos:
+
+- Diseño responsive.
+- Prioridad móvil.
+- Navegación clara.
+- Buena legibilidad.
+- Tipografía consistente.
+- Contraste accesible.
+- Espaciado adecuado.
+- Imágenes optimizadas.
+- Tarjetas de contenido coherentes.
+- Breadcrumbs.
+- Artículos relacionados.
+- Footer completo.
+- Enlaces claramente identificables.
+- Ausencia de ventanas emergentes intrusivas.
+- Buena experiencia tanto en móvil como en escritorio.
+
+La página de inicio debe incluir:
+
+1. Una presentación clara del proyecto.
+2. Un título principal descriptivo.
+3. Acceso a las guías más importantes.
+4. Categorías temáticas.
+5. Rutas destacadas.
+6. Información práctica.
+7. Artículos recientes o seleccionados, siempre que aporten valor.
+8. Enlaces internos relevantes.
+
+Evita que la portada se convierta en una colección interminable de tarjetas sin contexto.
+
+No sacrifiques rendimiento por animaciones, vídeos pesados o efectos visuales innecesarios.
+
+---
+
+# 10. FUNCIONALIDADES DIFERENCIALES
+
+Implementa primero las funcionalidades que aporten mayor valor al visitante y sean razonables de mantener.
+
+## 10.1. Rutas turísticas
+
+Crea un sistema de rutas que permita explorar recorridos por Gijón.
+
+Cada ruta puede incluir:
+
+- Nombre y descripción.
+- Duración estimada.
+- Distancia aproximada.
+- Número de paradas.
+- Orden de las visitas.
+- Mapa interactivo.
+- Enlaces a las páginas de cada lugar.
+- Recomendaciones prácticas.
+- Alternativas si una visita no está disponible.
+
+No inventes distancias ni tiempos. Calcula los datos cuando sea posible o identifícalos claramente como estimaciones.
+
+## 10.2. Planificador de visitas
+
+Evalúa una herramienta interactiva que permita elegir:
+
+- Tiempo disponible.
+- Intereses.
+- Preferencia por pasear o utilizar transporte.
+- Viaje con niños o sin ellos.
+- Interés por playas, cultura, gastronomía o naturaleza.
+
+Genera una propuesta basada exclusivamente en lugares y datos existentes en el sistema.
+
+La herramienta debe funcionar correctamente en móvil y no ser imprescindible para acceder al contenido SEO de las guías.
+
+## 10.3. Mapas
+
+Utiliza mapas cuando ayuden a comprender las rutas.
+
+Evita cargar múltiples mapas pesados innecesariamente. Evalúa la carga diferida y alternativas ligeras.
+
+Documenta las condiciones de uso, atribución y posibles costes del proveedor cartográfico elegido.
+
+## 10.4. Información práctica
+
+Crea componentes reutilizables para mostrar duración, distancia, accesibilidad, costes y enlaces de navegación, siempre que los datos estén disponibles y sean fiables.
+
+No añadas funcionalidades complejas solo para que la web parezca más avanzada.
+
+---
+
+# 11. IMÁGENES Y RECURSOS VISUALES
+
+Revisa las imágenes existentes.
+
+Implementa:
+
+- Formatos modernos cuando sean compatibles.
+- Dimensiones adecuadas.
+- Imágenes responsive.
+- Lazy loading para imágenes fuera de pantalla.
+- Dimensiones explícitas para evitar saltos de diseño.
+- Texto alternativo descriptivo.
+- Carga prioritaria únicamente para la imagen principal cuando corresponda.
+
+No añadas palabras clave artificiales al atributo alt. Describe el contenido real de cada imagen.
+
+Utiliza fotografías propias o imágenes cuya licencia permita el uso previsto.
+
+Registra la procedencia y las condiciones de uso de los recursos externos.
+
+No descargues fotografías de Google Images para reutilizarlas sin comprobar sus derechos.
+
+No dependas de URLs externas inestables para las imágenes esenciales de la web.
+
+---
+
+# 12. RENDIMIENTO, SEGURIDAD Y ACCESIBILIDAD
+
+Optimiza el rendimiento sin perjudicar la funcionalidad.
+
+Comprueba:
+
+- Core Web Vitals.
+- LCP.
+- INP.
+- CLS.
+- Tamaño del JavaScript.
+- Dependencias innecesarias.
+- Carga de fuentes.
+- Imágenes pesadas.
+- Errores de consola.
+- Peticiones de red.
+- Carga móvil.
+- Navegación con teclado.
+- Etiquetas semánticas.
+- Formularios accesibles.
+- Contraste.
+- Estados de foco.
+- Encabezados correctamente ordenados.
+
+Busca resultados sólidos en Lighthouse, pero no falsees métricas ni sacrifiques contenido útil para obtener una puntuación artificialmente perfecta.
+
+Revisa la configuración de Firebase Hosting:
+
+- HTTPS.
+- Cabeceras apropiadas.
+- Caché de recursos estáticos.
+- Reglas de reescritura.
+- Redirecciones.
+- Gestión de errores.
+- Variables de entorno.
+- Ausencia de secretos en el frontend.
+- Permisos de Firebase si existen servicios adicionales.
+
+No expongas claves privadas, credenciales ni información sensible.
+
+---
+
+# 13. GOOGLE ADSENSE: PREPARACIÓN PARA LA MONETIZACIÓN
+
+Quiero que la aplicación quede preparada técnicamente para integrar Google AdSense, pero no quiero anuncios activos por defecto ni identificadores ficticios.
+
+## 13.1. Preparación
+
+Diseña una arquitectura de anuncios que permita incorporar AdSense posteriormente sin reescribir las páginas.
+
+Debe contemplar:
+
+- Configuración centralizada.
+- Identificador del editor mediante variable de configuración.
+- Componentes reutilizables para unidades publicitarias.
+- Ubicaciones configurables.
+- Activación y desactivación global.
+- Espacios reservados que no rompan el diseño.
+- Adaptación a móvil y escritorio.
+- Prevención de saltos de diseño.
+- Ausencia de anuncios en páginas donde no correspondan.
+
+No insertes anuncios en todas las secciones por defecto.
+
+## 13.2. Ubicaciones
+
+Evalúa ubicaciones razonables:
+
+- Dentro de artículos largos, entre bloques de contenido.
+- Al final de una guía.
+- En otras posiciones que no interfieran con la navegación.
+
+No coloques anuncios de forma que se confundan con botones, enlaces, mapas o recomendaciones editoriales.
+
+No priorices el número de impresiones sobre la experiencia del usuario.
+
+## 13.3. Cumplimiento
+
+Prepara la documentación y los puntos de integración necesarios para:
+
+- Añadir la web a AdSense.
+- Verificar la propiedad.
+- Implementar el código proporcionado por Google.
+- Publicar ads.txt cuando corresponda.
+- Gestionar las preferencias de privacidad y el consentimiento.
+- Cumplir las políticas de contenido y tráfico de Google.
+
+No inventes códigos de editor, identificadores de unidades, estados de aprobación ni archivos ads.txt con datos ficticios.
+
+No implementes un sistema de consentimiento que afirme cumplir la normativa sin comprobar su funcionamiento y los requisitos aplicables.
+
+No actives anuncios hasta que se configuren los identificadores reales, los controles necesarios y se decida expresamente habilitarlos.
+
+Deja instrucciones precisas para completar la configuración manual.
+
+No garantices la aprobación de AdSense.
+
+---
+
+# 14. PÁGINAS LEGALES Y PRIVACIDAD
+
+Revisa las páginas legales existentes y crea o mejora las necesarias:
+
+- Aviso legal.
+- Política de privacidad.
+- Política de cookies.
+- Página de contacto.
+
+Los textos deben corresponder al funcionamiento real de la web.
+
+No inventes datos del titular, domicilio, empresa, NIF, correo de contacto ni proveedores contratados.
+
+Utiliza campos de configuración o marcadores claramente identificados cuando falten datos.
+
+Explica qué información debo completar personalmente.
+
+Si se incorporan Google Analytics, AdSense, mapas u otros servicios, documenta las implicaciones de privacidad correspondientes.
+
+Evalúa los requisitos de protección de datos aplicables en España y la Unión Europea, incluyendo las obligaciones de información y consentimiento que correspondan.
+
+No declares que la web cumple toda la normativa simplemente porque existan páginas legales.
+
+---
+
+# 15. ENLAZADO INTERNO Y AUTORIDAD TEMÁTICA
+
+Implementa una estrategia de enlaces internos que conecte las guías de forma lógica.
+
+Por ejemplo:
+
+- La guía principal enlaza a las rutas.
+- Las rutas enlazan a las fichas de los lugares.
+- Las páginas de playas enlazan a los planes cercanos.
+- Las guías familiares enlazan a actividades adecuadas.
+- Las guías prácticas enlazan a los artículos relacionados.
+- Los artículos relacionados enlazan de vuelta a sus categorías relevantes.
+
+Utiliza textos de enlace descriptivos y naturales.
+
+No generes cientos de enlaces automáticos irrelevantes.
+
+Evita páginas huérfanas.
+
+Evalúa la utilidad de los breadcrumbs y de una sección de artículos relacionados.
+
+No añadas backlinks artificiales, comentarios automatizados, enlaces comprados que incumplan las directrices de Google ni técnicas de manipulación del ranking.
+
+---
+
+# 16. ESTRUCTURA DEL CONTENIDO Y MANTENIMIENTO
+
+Quiero poder ampliar la web sin tener que modificar componentes complejos cada vez que publique una guía.
+
+Evalúa un sistema de contenidos basado en archivos Markdown, MDX, JSON tipado o una solución equivalente adecuada a la arquitectura existente.
+
+Cada artículo debería poder gestionar, como mínimo:
+
+- Título.
+- Slug.
+- Descripción.
+- Fecha de publicación real.
+- Fecha de actualización real.
+- Autor o responsable editorial, si procede.
+- Imagen principal.
+- Texto alternativo.
+- Categorías.
+- Contenido.
+- Tabla de contenidos cuando sea útil.
+- Lugares relacionados.
+- Artículos relacionados.
+- Metadatos SEO.
+- Estado de publicación.
+
+Valida los campos y evita que un artículo sin título, contenido o slug correcto se publique por error.
+
+Documenta cómo crear un nuevo artículo con un ejemplo real.
+
+No añadas un CMS externo si no es necesario y no compensa su complejidad.
+
+---
+
+# 17. PRIMEROS CONTENIDOS A IMPLEMENTAR
+
+Después de auditar el contenido actual, selecciona las guías prioritarias.
+
+Como mínimo, revisa o desarrolla estas:
+
+1. Qué ver en Gijón.
+2. Qué ver en Gijón en un día.
+3. Gijón en dos días.
+4. Qué hacer en Gijón gratis.
+5. Qué hacer en Gijón cuando llueve.
+6. Qué hacer en Gijón con niños.
+7. Mejores playas de Gijón.
+8. Ruta a pie por Cimavilla.
+9. Dónde aparcar en Gijón para visitar el centro.
+10. Información práctica para organizar una visita a Gijón.
+
+Antes de crear una página nueva, comprueba si ya existe una equivalente y mejórala cuando sea la opción más coherente.
+
+Los contenidos deben estar redactados en español natural de España, ser claros y estar orientados a resolver dudas reales.
+
+No publiques textos genéricos para completar una lista.
+
+Si no puedes verificar un dato importante, no lo presentes como un hecho.
+
+Prioriza la calidad, la exactitud, la experiencia del usuario y la diferenciación.
+
+---
+
+# 18. CRITERIOS DE ACEPTACIÓN Y PRUEBAS
+
+No des el proyecto por terminado únicamente porque compile.
+
+Ejecuta las comprobaciones que permita el entorno.
+
+## Pruebas funcionales
+
+- La aplicación arranca.
+- La compilación de producción termina correctamente.
+- Las páginas principales funcionan.
+- Las rutas internas se pueden abrir directamente.
+- Los enlaces funcionan.
+- Las imágenes se cargan.
+- El diseño responde a móvil y escritorio.
+- No existen errores críticos de JavaScript.
+- Los componentes interactivos funcionan.
+- Las páginas inexistentes se gestionan correctamente.
+
+## Pruebas SEO
+
+- Cada página importante tiene título único.
+- Las descripciones son específicas.
+- Existe un H1 principal adecuado.
+- Las canónicas son correctas.
+- El sitemap es válido.
+- robots.txt es correcto.
+- No hay bloqueos accidentales de indexación.
+- Los enlaces internos son rastreables.
+- Los datos estructurados son válidos cuando corresponda.
+- Las páginas importantes exponen contenido útil al renderizarse.
+- Las imágenes tienen atributos apropiados.
+- No existen duplicados evitables.
+
+## Pruebas de rendimiento
+
+- Mide el rendimiento cuando las herramientas disponibles lo permitan.
+- Revisa las imágenes principales y el peso de los recursos.
+- Comprueba la estabilidad visual.
+- Identifica problemas de accesibilidad.
+- Corrige los problemas graves que puedas reproducir.
+
+## Pruebas de monetización
+
+- Los anuncios están desactivados por defecto.
+- No existen identificadores ficticios activos.
+- Los espacios reservados no rompen el diseño.
+- La integración futura está documentada.
+- No se declara cumplimiento normativo sin haberlo verificado.
+
+Distingue entre pruebas realizadas, resultados observados y comprobaciones que requieren acceso externo.
+
+---
+
+# 19. ORDEN DE IMPLEMENTACIÓN
+
+Trabaja en este orden:
+
+FASE 1. Auditoría del repositorio y plan de cambios.
+
+FASE 2. Corrección de arquitectura, renderizado y rutas.
+
+FASE 3. Implementación del SEO técnico.
+
+FASE 4. Rediseño de la navegación y de la página de inicio.
+
+FASE 5. Mejora del sistema de contenidos y publicación de las guías prioritarias.
+
+FASE 6. Enlazado interno, mapas y funcionalidades diferenciales.
+
+FASE 7. Rendimiento, accesibilidad y seguridad.
+
+FASE 8. Preparación de AdSense y páginas legales.
+
+FASE 9. Pruebas, compilación, validación y documentación.
+
+Si detectas un problema crítico en una fase anterior, resuélvelo antes de continuar.
+
+No dediques tiempo a funcionalidades secundarias mientras existan problemas graves de indexación, renderizado o navegación.
+
+---
+
+# 20. ENTREGABLES FINALES
+
+Al terminar, necesito:
+
+1. El código actualizado y funcional dentro del repositorio.
+2. Los problemas que encontraste y cómo los resolviste.
+3. Las mejoras SEO implementadas.
+4. Los contenidos nuevos o mejorados.
+5. Los resultados de las pruebas realizadas.
+6. Los problemas pendientes que no hayas podido resolver.
+7. Las tareas manuales que debo completar en Firebase, Google Search Console y AdSense.
+8. Las variables de configuración que tengo que introducir.
+9. Una lista de comprobaciones para solicitar AdSense cuando la web esté preparada.
+
+No afirmes que has publicado los cambios en producción si únicamente has modificado el repositorio local.
+
+No afirmes que la web está indexada, aprobada por AdSense o posicionada si no dispones de pruebas que lo demuestren.
+
+---
+
+# 21. FILOSOFÍA DEL PROYECTO
+
+La prioridad es construir una web útil, fiable, rápida y sostenible.
+
+No quiero:
+
+- Contenido masivo de baja calidad.
+- Keywords repetidas artificialmente.
+- Páginas duplicadas.
+- Textos inventados.
+- Reseñas falsas.
+- Imágenes sin licencia.
+- Anuncios intrusivos.
+- Funcionalidades innecesarias.
+- Migraciones tecnológicas sin justificación.
+- Resultados de SEO prometidos sin evidencia.
+
+Sí quiero:
+
+- Buena arquitectura.
+- Contenido original y útil.
+- SEO técnico correcto.
+- Información turística contrastada.
+- Experiencia móvil excelente.
+- Rutas y herramientas que aporten valor.
+- Enlazado interno coherente.
+- Rendimiento sólido.
+- Cumplimiento de las políticas de Google.
+- Una base técnica fácil de mantener.
+- Una estrategia realista de crecimiento y monetización.
+
+**Empieza inspeccionando el repositorio completo. Después implementa las mejoras directamente, valida los resultados y entrega una aplicación que esté realmente preparada para crecer. No te limites a proponer cambios: ejecuta todo lo que puedas comprobar y realizar con las herramientas disponibles.**

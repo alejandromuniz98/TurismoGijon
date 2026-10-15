@@ -68,8 +68,11 @@ export default function PoliticaCookiesPage() {
               <tbody>
                 <tr>
                   <td>Firebase Analytics / Google Analytics (Google)</td>
-                  <td>Analítica</td>
-                  <td>Medición de visitas, rutas y eventos de uso del sitio de forma agregada</td>
+                  <td>Analítica (opcional)</td>
+                  <td>
+                    Medición de visitas y rutas de forma agregada; solo se activa si el usuario acepta analítica en el
+                    banner o en «Gestionar cookies»
+                  </td>
                   <td>Según configuración de Google (puede incluir cookies persistentes)</td>
                 </tr>
                 <tr>
@@ -81,7 +84,10 @@ export default function PoliticaCookiesPage() {
                 <tr>
                   <td>Almacenamiento local del navegador</td>
                   <td>Técnica</td>
-                  <td>Funcionamiento de la aplicación web (SPA) y recursos cacheados por el navegador</td>
+                  <td>
+                    Funcionamiento de la SPA, caché del navegador y preferencia de cookies (
+                    <code>tg_cookie_consent</code>)
+                  </td>
                   <td>Variable</td>
                 </tr>
                 <tr>
@@ -118,7 +124,16 @@ export default function PoliticaCookiesPage() {
             analítica, cuando estén disponibles.
           </p>
 
-          <h2>6. Actualizaciones</h2>
+          <h2>6. Preferencias en este sitio</h2>
+          <p>
+            Al visitar la web puede aceptar o rechazar las cookies de analítica mediante el banner de preferencias. Si
+            elige solo las necesarias, no se inicializará Firebase Analytics ni se enviarán eventos de medición. Puede
+            revisar o cambiar su elección en cualquier momento con el enlace <strong>Gestionar cookies</strong> del pie
+            de página. La preferencia se guarda en el navegador (almacenamiento local, clave{" "}
+            <code>tg_cookie_consent</code>).
+          </p>
+
+          <h2>7. Actualizaciones</h2>
           <p>
             Esta política se revisará cuando cambien las cookies empleadas, los proveedores o la normativa aplicable. La
             fecha de la última actualización figura al final de esta página.

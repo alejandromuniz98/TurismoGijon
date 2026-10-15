@@ -1,6 +1,6 @@
 /**
  * Genera sitemap.xml en build/ tras `npm run build`.
- * Ejecutar: node scripts/generate-sitemap.js
+ * lastmod de artículos: dateModified del registry (no “hoy” artificial).
  */
 const fs = require("fs");
 const path = require("path");
@@ -13,20 +13,36 @@ const baseUrl = (
 const buildDir = path.join(__dirname, "..", "build");
 const outFile = path.join(buildDir, "sitemap.xml");
 
-const today = new Date().toISOString().split("T")[0];
+const registrySrc = fs.readFileSync(
+  path.join(__dirname, "..", "src", "data", "articleRegistry.js"),
+  "utf8"
+);
+
+const articleLastMod = {};
+const blockRe =
+  /slug:\s*"([^"]+)"[\s\S]*?dateModified:\s*"(\d{4}-\d{2}-\d{2})"/g;
+let match;
+while ((match = blockRe.exec(registrySrc))) {
+  articleLastMod[match[1]] = match[2];
+}
+
+/** Fecha estable para hubs/legales (no inventar “hoy” en cada build). */
+const DEFAULT_LASTMOD = "2026-10-14";
 
 const urlEntries = paths
   .map((p) => {
     const loc = `${baseUrl}${p === "/" ? "/" : p}`;
+    const slug = p.replace(/^\//, "");
+    const lastmod = articleLastMod[slug] || DEFAULT_LASTMOD;
     const priority =
       p === "/"
         ? "1.0"
-        : p.split("/").length <= 2
+        : p.split("/").filter(Boolean).length <= 1
           ? "0.9"
           : "0.8";
     return `  <url>
     <loc>${loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`;

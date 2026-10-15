@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import AdSlot from "./ads/AdSlot";
+import { openCookiePreferences } from "./privacy/CookieConsent";
 import { FOOTER_STRIP } from "../images/assets";
 import "../styles/Footer.css";
 
@@ -78,6 +79,11 @@ function Footer() {
               </li>
               <li>
                 <Link to="/aviso-legal">Aviso legal</Link>
+              </li>
+              <li>
+                <button type="button" className="site-footer__text-btn" onClick={openCookiePreferences}>
+                  Gestionar cookies
+                </button>
               </li>
             </ul>
             <p className="site-footer__note">

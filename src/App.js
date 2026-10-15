@@ -1,11 +1,13 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { logEvent } from "firebase/analytics";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Contacto from "./components/Contacto";
-import { analytics } from "./components/firebase";
-import { logEvent } from "firebase/analytics";
+import CookieConsent from "./components/privacy/CookieConsent";
+import { getAnalyticsInstance } from "./components/firebase";
+import { CONSENT_CHANGED_EVENT, hasAnalyticsConsent } from "./config/consent";
 import "./App.css";
 
 const HomePage = React.lazy(() => import("./pages/HomePage"));
@@ -22,7 +24,6 @@ const PoliticaCookiesPage = React.lazy(() => import("./pages/PoliticaCookiesPage
 const AvisoLegalPage = React.lazy(() => import("./pages/AvisoLegalPage"));
 const NotFoundPage = React.lazy(() => import("./pages/NotFoundPage"));
 
-/** Remonta ArticlePage al cambiar el slug (evita quedarse en el artículo anterior). */
 function ArticleRoute() {
   const { slug } = useParams();
   return <ArticlePage key={slug} />;
@@ -44,13 +45,57 @@ function PageLoader() {
   );
 }
 
+function trackPageView(pathname) {
+  if (!hasAnalyticsConsent()) return;
+  const analytics = getAnalyticsInstance();
+  if (!analytics) return;
+  logEvent(analytics, "page_view", {
+    page_path: pathname,
+    page_location: window.location.href,
+    page_title: document.title,
+  });
+}
+
 function AppRoutes() {
   const location = useLocation();
+  const lastTrackedPath = useRef(null);
+
   useEffect(() => {
-    if (analytics) {
-      logEvent(analytics, "page_view", { page_path: location.pathname });
-    }
-  }, [location]);
+    if (!hasAnalyticsConsent()) return;
+    if (lastTrackedPath.current === location.pathname) return;
+    lastTrackedPath.current = location.pathname;
+    trackPageView(location.pathname);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const onConsentChanged = (event) => {
+      const value = event.detail;
+      if (value !== "all") {
+        lastTrackedPath.current = null;
+        return;
+      }
+
+      // Tras aceptar, esperar a la instancia y registrar la ruta actual una sola vez.
+      lastTrackedPath.current = null;
+      let attempts = 0;
+      const tryTrack = () => {
+        if (!getAnalyticsInstance()) {
+          if (attempts < 40) {
+            attempts += 1;
+            window.setTimeout(tryTrack, 50);
+          }
+          return;
+        }
+        if (lastTrackedPath.current === location.pathname) return;
+        lastTrackedPath.current = location.pathname;
+        trackPageView(location.pathname);
+      };
+      tryTrack();
+    };
+
+    window.addEventListener(CONSENT_CHANGED_EVENT, onConsentChanged);
+    return () => window.removeEventListener(CONSENT_CHANGED_EVENT, onConsentChanged);
+  }, [location.pathname]);
 
   return (
     <>
@@ -75,6 +120,7 @@ function AppRoutes() {
         </Routes>
       </Suspense>
       <Footer />
+      <CookieConsent />
     </>
   );
 }

@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "turismoporgijon"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }
