@@ -102,10 +102,11 @@ export default function PoliticaCookiesPage() {
                   <td>Google AdSense / proveedores publicitarios (Google y ATPs)</td>
                   <td>Publicidad (opcional; solo si está activada)</td>
                   <td>
-                    Selección, personalización y medición de anuncios. El script publicitario no se carga mientras
-                    AdSense esté desactivado en la configuración del sitio. Cuando se active, el consentimiento
-                    publicitario en el EEE/UK/CH se gestionará con Google Privacy &amp; Messaging u otra CMP certificada,
-                    no con el banner de solo analítica
+                    Selección, personalización y medición de anuncios. El script de AdSense del editor
+                    (<code>ca-pub-7727728148044259</code>) se incluye en el &lt;head&gt; del sitio. Los bloques de
+                    anuncio concretos solo se muestran cuando hay unidades configuradas. El consentimiento publicitario
+                    en el EEE/UK/CH debe gestionarse con Google Privacy &amp; Messaging u otra CMP certificada, no con el
+                    banner de solo analítica
                   </td>
                   <td>Según Google y cada proveedor (pueden ser persistentes)</td>
                 </tr>

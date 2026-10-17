@@ -9,9 +9,10 @@ Crea `.env` en la raíz del proyecto (no la subas a git si contiene secretos):
 ```env
 REACT_APP_SITE_URL=https://turismoengijon.com
 
-# AdSense — dejar desactivado hasta tener ca-pub real, CMP y unidades
+# AdSense — el script del editor ya está en public/index.html (ca-pub-7727728148044259).
+# Las unidades AdSlot siguen off hasta ENABLED=true + IDs de unidad.
 REACT_APP_ADSENSE_ENABLED=false
-REACT_APP_ADSENSE_CLIENT=
+REACT_APP_ADSENSE_CLIENT=ca-pub-7727728148044259
 REACT_APP_ADSENSE_SLOT_HOME_MID=
 REACT_APP_ADSENSE_SLOT_HOME_FOOTER=
 REACT_APP_ADSENSE_SLOT_ARTICLE_TOP=
@@ -25,7 +26,7 @@ REACT_APP_ADSENSE_SLOT_HUB_INLINE=
 REACT_APP_ADSENSE_SLOT_FOOTER=
 ```
 
-Sin `REACT_APP_ADSENSE_ENABLED=true` y un `ca-pub-…` válido **no** se carga el script de AdSense ni se muestran anuncios (los `AdSlot` no dejan hueco visual).
+El script `adsbygoogle.js` con `ca-pub-7727728148044259` está en el `<head>` de `public/index.html` (cubre todas las rutas de la SPA). Sin `REACT_APP_ADSENSE_ENABLED=true` y slots `REACT_APP_ADSENSE_SLOT_*` **no** se muestran bloques `AdSlot` (no dejan hueco visual).
 
 ## Despliegue Firebase Hosting
 
@@ -71,7 +72,7 @@ El banner de analítica **no** sustituye a una CMP certificada.
    - Selecciona proveedores de tecnología publicitaria (ATPs) o el conjunto habitual.
    - Publica el mensaje para el sitio/dominio correcto.
 4. Crea unidades de anuncio (anuncios automáticos y/o bloques) y copia los IDs numéricos de unidad.
-5. Actualiza `public/ads.txt` con la **línea exacta** que AdSense indique (sustituye el stub comentado). Comprueba `https://turismoengijon.com/ads.txt` tras el deploy.
+5. `public/ads.txt` ya contiene la línea de AdSense (`pub-7727728148044259`). Tras el deploy, comprueba `https://turismoengijon.com/ads.txt` (y la URL de Firebase Hosting si aplica).
 6. En el proyecto, configura `.env` con `REACT_APP_ADSENSE_ENABLED=true`, `REACT_APP_ADSENSE_CLIENT` y los `REACT_APP_ADSENSE_SLOT_*` reales.
 7. Rebuild + deploy (solo cuando autorices publicar).
 8. Verifica en un navegador del EEE:

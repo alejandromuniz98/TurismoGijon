@@ -21,6 +21,12 @@
 4. **No inventar** `ca-pub-…` ni IDs de unidad ni entradas `ads.txt` falsas.
 5. **No desplegar** sin autorización.
 
+## Actualización 17-oct-2026
+
+- Script AdSense del editor `ca-pub-7727728148044259` añadido en `public/index.html` `<head>` (SPA: aplica a todas las rutas).
+- `AdsenseBootstrap` no duplica la carga.
+- `public/ads.txt` con la línea oficial: `google.com, pub-7727728148044259, DIRECT, f08c47fec0942fa0`.
+
 ## Cambios previstos
 
 - `src/config/ads.js` + `AdsenseBootstrap` + `AdSlot` (sin hueco visible)

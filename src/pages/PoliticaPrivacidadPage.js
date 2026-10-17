@@ -113,12 +113,12 @@ export default function PoliticaPrivacidadPage() {
             </table>
           </div>
           <p>
-            En la fecha de esta política, la publicidad de Google AdSense puede estar preparada técnicamente en el sitio
-            pero <strong>no se activa ni se cargan scripts publicitarios</strong> hasta que el titular configure e active
-            el servicio. No se realizan decisiones automatizadas ni elaboración de perfiles que produzcan efectos
-            jurídicos o le afecten de modo significativo de forma similar (art. 22 RGPD), sin perjuicio de la
-            personalización de anuncios por terceros cuando usted haya prestado el consentimiento publicitario
-            correspondiente.
+            En la fecha de esta política, el sitio incluye el script de Google AdSense del editor
+            (<code>ca-pub-7727728148044259</code>) en el documento HTML. La visualización de bloques de anuncio
+            concretos depende de la configuración de unidades y de la aprobación/estado de la cuenta. No se realizan
+            decisiones automatizadas ni elaboración de perfiles que produzcan efectos jurídicos o le afecten de modo
+            significativo de forma similar (art. 22 RGPD), sin perjuicio de la personalización de anuncios por terceros
+            cuando usted haya prestado el consentimiento publicitario correspondiente.
           </p>
 
           <h2>4. Plazos de conservación</h2>
