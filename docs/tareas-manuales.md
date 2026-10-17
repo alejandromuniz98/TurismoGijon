@@ -7,7 +7,7 @@ Este documento lista lo que **debes completar tú** fuera del código. No afirma
 Crea `.env` en la raíz del proyecto (no la subas a git si contiene secretos):
 
 ```env
-REACT_APP_SITE_URL=https://turismoporgijon.web.app
+REACT_APP_SITE_URL=https://turismoengijon.com
 REACT_APP_ADSENSE_ENABLED=false
 REACT_APP_ADSENSE_CLIENT=
 ```
@@ -31,7 +31,7 @@ npm run build
 firebase deploy --only hosting --project turismoporgijon
 ```
 
-URL esperada: https://turismoporgijon.web.app
+URL esperada: https://turismoengijon.com
 
 Si aparece error de “site name”, comprueba que `firebase.json` incluye `"site": "turismoporgijon"`.
 
@@ -39,7 +39,7 @@ Si aparece error de “site name”, comprueba que `firebase.json` incluye `"sit
 
 1. Entra en [Google Search Console](https://search.google.com/search-console) con la cuenta del sitio.
 2. Verifica la propiedad (ya hay meta `google-site-verification` en `public/index.html`; confirma que coincide con tu token).
-3. Envía el sitemap: `https://turismoporgijon.web.app/sitemap.xml`
+3. Envía el sitemap: `https://turismoengijon.com/sitemap.xml`
 4. Usa “Inspección de URL” en portada, hubs y 2–3 artículos clave.
 5. Revisa Cobertura / Páginas e informes de experiencia.
 6. Consulta Rendimiento (impresiones, clics, CTR, posición) cuando haya datos.

@@ -5,7 +5,7 @@ export const SITE_TAGLINE = "Guía de viaje, playas y planes en la costa de Astu
 export const CONTACT_EMAIL = "turismoengijon@gmail.com";
 
 const envUrl = process.env.REACT_APP_SITE_URL;
-export const SITE_URL = (envUrl || "https://turismoporgijon.web.app").replace(/\/$/, "");
+export const SITE_URL = (envUrl || "https://turismoengijon.com").replace(/\/$/, "");
 
 /** Convierte ruta de bundler (/static/media/...) o absoluta en URL absoluta para JSON-LD y Open Graph. */
 export function absoluteUrl(assetPath) {

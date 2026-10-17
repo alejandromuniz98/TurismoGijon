@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # SPA: el contenido se renderiza en el cliente; Google ejecuta JavaScript.
-Sitemap: https://turismoporgijon.web.app/sitemap.xml
+Sitemap: https://turismoengijon.com/sitemap.xml

@@ -7,7 +7,7 @@ const path = require("path");
 
 const paths = require("../src/data/sitemap-paths.json");
 const baseUrl = (
-  process.env.REACT_APP_SITE_URL || "https://turismoporgijon.web.app"
+  process.env.REACT_APP_SITE_URL || "https://turismoengijon.com"
 ).replace(/\/$/, "");
 
 const buildDir = path.join(__dirname, "..", "build");

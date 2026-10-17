@@ -13,7 +13,7 @@ Actúa como un equipo multidisciplinar formado por:
 
 Tienes acceso al repositorio y al código fuente completo de mi aplicación actual:
 
-https://turismoporgijon.web.app/
+https://turismoengijon.com/
 
 La web está alojada en Firebase Hosting y está dedicada al turismo en Gijón, Asturias, España.
 
