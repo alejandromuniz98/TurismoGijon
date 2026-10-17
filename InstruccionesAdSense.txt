@@ -1,0 +1,156 @@
+# Auditoría y preparación de Turismo por Gijón para Google AdSense
+
+Quiero que audites y adaptes mi página web para cumplir los requisitos aplicables de Google AdSense, especialmente los relacionados con privacidad, cookies, consentimiento publicitario y protección de datos en España y el Espacio Económico Europeo.
+
+## 1. Contexto del proyecto
+
+- Web: https://turismoengijon.com/
+- Repositorio: https://github.com/alejandromuniz98/TurismoGijon
+- Tecnología: React, React Router, Create React App y Firebase Hosting.
+- SEO: ya se han revisado el sitemap.xml, robots.txt y las principales URL en Google Search Console.
+- La página principal ya está indexada.
+- El informe de indexación de Search Console todavía está procesando los datos.
+
+## 2. Restricciones obligatorias
+
+Antes de realizar cualquier cambio, inspecciona la estructura actual del proyecto y reutiliza sus componentes y configuraciones existentes.
+
+**No hagas lo siguiente:**
+
+- No modifiques el contenido, la redacción ni la estructura editorial de los artículos.
+- No cambies los valores predeterminados de `src/config/site.js` ni `scripts/generate-sitemap.js`.
+- No modifiques el sitemap, robots.txt, las URL canónicas ni la configuración SEO que ya funciona, salvo que detectes un problema directamente relacionado con los requisitos de esta tarea.
+- No cambies el dominio ni añadas redirecciones 301.
+- No rediseñes la web ni elimines funcionalidades existentes.
+- No actives anuncios reales ni publiques cambios en producción sin autorización.
+- No inventes información legal, datos de contacto, tratamientos de datos o proveedores que no hayas podido verificar.
+
+## 3. Auditoría de privacidad y cumplimiento legal
+
+Revisa las páginas y componentes actuales relacionados con:
+
+- Aviso legal.
+- Política de privacidad.
+- Política de cookies.
+- Banner de consentimiento.
+- Configuración y carga de Firebase Analytics.
+- Componentes y configuración existentes de Google AdSense, si los hay.
+
+Consulta la documentación oficial vigente de Google y las normas aplicables en España y la Unión Europea.
+
+Comprueba que la política de privacidad explique de forma clara y veraz, cuando corresponda:
+
+- La utilización de cookies y tecnologías similares.
+- El uso de Google AdSense para mostrar anuncios.
+- La posible utilización de cookies publicitarias por Google y otros proveedores.
+- La publicidad personalizada y no personalizada, cuando proceda.
+- La utilización de datos para la selección y medición de anuncios.
+- La intervención de terceros y los enlaces a sus políticas de privacidad.
+- Cómo gestionar o retirar el consentimiento.
+- Los derechos de los usuarios y la información exigible sobre el tratamiento de datos.
+
+Revisa también la política de cookies y el aviso legal. Modifica únicamente los apartados que realmente sean insuficientes o incorrectos.
+
+No afirmes que la web cumple legalmente solo porque tenga páginas legales. Identifica cualquier cuestión que necesite confirmación del propietario o asesoramiento especializado.
+
+## 4. Consentimiento para cookies y publicidad
+
+Actualmente existe un sistema de consentimiento que contempla las cookies necesarias y la analítica de Firebase. Audita su funcionamiento antes de decidir si debe modificarse o sustituirse.
+
+Comprueba los requisitos actuales de Google para servir anuncios en el Espacio Económico Europeo, incluido el uso de una plataforma de gestión del consentimiento (CMP) certificada por Google e integrada con el Marco de Transparencia y Consentimiento (TCF) de IAB Europe, cuando resulte aplicable.
+
+Valora primero Google Privacy & Messaging como posible solución, sin asumir que ya está configurada.
+
+Si es la opción más adecuada:
+
+1. Explica cómo configurarla en la cuenta del propietario.
+2. Identifica qué cambios requiere el proyecto React.
+3. Integra la solución utilizando las instrucciones oficiales y vigentes de Google.
+4. Evita implementar un banner casero que se presente como sustituto de una CMP certificada cuando esta sea obligatoria.
+5. Conserva las preferencias del usuario de forma coherente con el sistema elegido.
+6. Asegúrate de que el usuario pueda rechazar la publicidad no necesaria y modificar o retirar su consentimiento.
+7. No cargues ni actives tecnologías publicitarias antes del consentimiento cuando este sea legalmente necesario.
+8. Comprueba que retirar el consentimiento también se refleje en el comportamiento de las etiquetas y servicios integrados.
+9. Revisa la compatibilidad con el consentimiento de Firebase Analytics, evitando que el cambio rompa la medición existente.
+10. No dupliques banners, scripts, mecanismos de consentimiento ni solicitudes de consentimiento.
+
+Distingue entre los requisitos legales, los requisitos de Google y las recomendaciones técnicas. No supongas que el consentimiento para analítica equivale al consentimiento publicitario.
+
+Si la solución necesita configuración manual en Google AdSense o en otra consola, documenta los pasos exactos que debe completar el propietario. No simules que la cuenta está configurada si no puedes acceder a ella.
+
+## 5. Integración técnica de Google AdSense
+
+Inspecciona los componentes existentes, especialmente `src/components/ads/AdSlot.js` y los lugares en los que se utiliza.
+
+Comprueba:
+
+- Cómo se activa actualmente la publicidad.
+- Si el código de AdSense puede cargarse más de una vez.
+- Si los bloques de anuncios tienen una configuración válida.
+- Si existe una separación adecuada entre la configuración, los anuncios y el consentimiento.
+- Si la implementación puede funcionar correctamente con React y React Router.
+- Si los anuncios se mantienen desactivados hasta que el propietario complete la configuración y la aprobación necesarias.
+- Si se necesita un archivo `ads.txt` y cómo debe configurarse cuando Google proporcione los datos correspondientes.
+
+No inventes el identificador de editor `ca-pub-...`, los identificadores de bloques de anuncios ni las entradas de `ads.txt`. Utiliza marcadores claramente identificados o solicita los datos que falten.
+
+No insertes anuncios reales ni alteres el comportamiento de producción sin autorización.
+
+## 6. Seguridad, accesibilidad y experiencia de usuario
+
+Comprueba que el banner de consentimiento:
+
+- Sea accesible desde ordenador y móvil.
+- Tenga textos claros y botones identificables.
+- Permita rechazar las opciones no necesarias sin una dificultad artificial.
+- No bloquee la navegación ni interfiera con React Router.
+- No muestre varias veces el mismo mensaje innecesariamente.
+- Proporcione acceso a la configuración posterior de las preferencias.
+
+No elimines las cabeceras de seguridad existentes ni debilites la configuración de Firebase Hosting.
+
+## 7. Pruebas obligatorias
+
+Después de los cambios:
+
+1. Ejecuta las pruebas disponibles y la compilación de producción.
+2. Comprueba que la web no presenta errores de compilación.
+3. Revisa el funcionamiento del consentimiento con las diferentes opciones disponibles.
+4. Verifica que las preferencias se conservan y pueden modificarse.
+5. Comprueba que Firebase Analytics sigue funcionando conforme al consentimiento configurado.
+6. Comprueba que no se cargan scripts publicitarios antes de que corresponda.
+7. Verifica que no se han duplicado scripts de Google.
+8. Comprueba que las rutas, metadatos SEO, enlaces internos, sitemap y robots.txt no han sufrido cambios accidentales.
+9. Revisa la consola del navegador y la pestaña Network para detectar errores.
+10. No declares cumplido un requisito que no hayas podido verificar realmente.
+
+Si no es posible realizar alguna prueba por necesitar acceso a una cuenta de Google, indícalo expresamente.
+
+## 8. Documentación oficial
+
+Utiliza preferentemente documentación oficial actualizada:
+
+- Google AdSense: https://support.google.com/adsense/
+- Requisitos de consentimiento: https://support.google.com/adsense/answer/7670013?hl=es
+- Google Privacy & Messaging: https://support.google.com/adsense/answer/10960973?hl=es
+- Documentación de Firebase: https://firebase.google.com/docs
+
+Consulta también las fuentes oficiales de protección de datos españolas y europeas cuando sea necesario.
+
+## 9. Resultado esperado
+
+Al terminar, entrega:
+
+1. Un diagnóstico inicial con los problemas reales encontrados.
+2. Una lista de los archivos modificados y la justificación de cada cambio.
+3. Los cambios implementados, respetando todas las restricciones anteriores.
+4. Una lista de los pasos manuales que deba completar el propietario en Google AdSense, Google Privacy & Messaging o Firebase.
+5. Los resultados de las pruebas realizadas.
+6. Una lista de los requisitos que siguen pendientes de verificación.
+7. Una conclusión clara que diferencie entre:
+   - Preparación técnica completada.
+   - Configuración externa pendiente.
+   - Cumplimiento legal pendiente de confirmar.
+   - Aprobación de AdSense, que no puede garantizarse mediante cambios de código.
+
+**Importante:** trabaja de forma conservadora. Inspecciona primero, explica los cambios necesarios y evita modificar partes de la web que ya funcionan. Si necesitas credenciales, identificadores o decisiones del propietario, detente en ese punto y solicita la información en lugar de inventarla. No publiques ni despliegues en producción sin autorización explícita.

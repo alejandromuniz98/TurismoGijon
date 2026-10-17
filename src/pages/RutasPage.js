@@ -78,7 +78,7 @@ export default function RutasPage() {
           <Link to="/lugares-secretos-gijon">rincones menos conocidos</Link>.
         </p>
 
-        <AdSlot variant="inline" slotKey="rutas-mid" />
+        <AdSlot variant="inline" unitKey="rutasMid" />
       </div>
     </main>
   );

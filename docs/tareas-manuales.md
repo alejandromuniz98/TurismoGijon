@@ -1,6 +1,6 @@
 # Tareas manuales (Firebase, Search Console, AdSense)
 
-Este documento lista lo que **debes completar tú** fuera del código. No afirma indexación, aprobación de AdSense ni despliegue en producción.
+Este documento lista lo que **debes completar tú** fuera del código. No afirma indexación, aprobación de AdSense ni cumplimiento legal automático.
 
 ## Variables de entorno (opcional)
 
@@ -8,18 +8,24 @@ Crea `.env` en la raíz del proyecto (no la subas a git si contiene secretos):
 
 ```env
 REACT_APP_SITE_URL=https://turismoengijon.com
+
+# AdSense — dejar desactivado hasta tener ca-pub real, CMP y unidades
 REACT_APP_ADSENSE_ENABLED=false
 REACT_APP_ADSENSE_CLIENT=
+REACT_APP_ADSENSE_SLOT_HOME_MID=
+REACT_APP_ADSENSE_SLOT_HOME_FOOTER=
+REACT_APP_ADSENSE_SLOT_ARTICLE_TOP=
+REACT_APP_ADSENSE_SLOT_ARTICLE_SIDE=
+REACT_APP_ADSENSE_SLOT_ARTICLE_MID=
+REACT_APP_ADSENSE_SLOT_BLOG_TOP=
+REACT_APP_ADSENSE_SLOT_BLOG_FOOTER=
+REACT_APP_ADSENSE_SLOT_MAP_BOTTOM=
+REACT_APP_ADSENSE_SLOT_RUTAS_MID=
+REACT_APP_ADSENSE_SLOT_HUB_INLINE=
+REACT_APP_ADSENSE_SLOT_FOOTER=
 ```
 
-Cuando AdSense te dé el publisher ID:
-
-```env
-REACT_APP_ADSENSE_ENABLED=true
-REACT_APP_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX
-```
-
-Los huecos `AdSlot` seguirán en placeholder hasta que pases también un `adSlot` real por unidad.
+Sin `REACT_APP_ADSENSE_ENABLED=true` y un `ca-pub-…` válido **no** se carga el script de AdSense ni se muestran anuncios (los `AdSlot` no dejan hueco visual).
 
 ## Despliegue Firebase Hosting
 
@@ -38,57 +44,79 @@ Si aparece error de “site name”, comprueba que `firebase.json` incluye `"sit
 ## Google Search Console
 
 1. Entra en [Google Search Console](https://search.google.com/search-console) con la cuenta del sitio.
-2. Verifica la propiedad (ya hay meta `google-site-verification` en `public/index.html`; confirma que coincide con tu token).
+2. Verifica la propiedad (meta `google-site-verification` en `public/index.html`).
 3. Envía el sitemap: `https://turismoengijon.com/sitemap.xml`
 4. Usa “Inspección de URL” en portada, hubs y 2–3 artículos clave.
 5. Revisa Cobertura / Páginas e informes de experiencia.
-6. Consulta Rendimiento (impresiones, clics, CTR, posición) cuando haya datos.
-7. Prioriza mejorar páginas con muchas impresiones y bajo CTR.
 
-**Nota:** La app es una SPA (React). Google suele ejecutar JS, pero el HTML inicial es mínimo. Si la indexación es débil, valora prerender/SSG en una fase posterior.
+**Nota:** La app es una SPA (React). Google suele ejecutar JS, pero el HTML inicial es mínimo.
 
-## Google AdSense (preparación)
+## Google AdSense + Privacy & Messaging (obligatorio en EEE/UK/CH para anuncios personalizados)
 
-Checklist antes de solicitar:
+### Distinción importante
 
-- [ ] Contenidos originales y útiles publicados
-- [ ] Navegación clara y páginas legales accesibles
-- [ ] Contacto funcional
-- [ ] Política de privacidad / cookies actualizadas
-- [ ] Tráfico real (no forzar visitas artificiales)
-- [ ] Dominio estable en HTTPS
+| Sistema | Qué cubre |
+|---|---|
+| Banner casero del sitio (`tg_cookie_consent`) | Solo Firebase Analytics |
+| Google Privacy & Messaging (CMP certificada / TCF) | Consentimiento publicitario AdSense en EEE, Reino Unido y Suiza |
 
-Pasos cuando Google te apruebe:
+El banner de analítica **no** sustituye a una CMP certificada.
 
-1. Obtén `ca-pub-...`
-2. Activa variables `REACT_APP_ADSENSE_*`
-3. Crea `public/ads.txt` con la línea que AdSense indique (no inventes IDs)
-4. Rebuild + deploy
-5. Asigna `adSlot` a cada `AdSlot` cuando tengas IDs de unidad
+### Pasos en la cuenta AdSense (propietario)
 
-Los anuncios están **desactivados por defecto** en el código.
+1. Solicita / gestiona AdSense en [adsense.google.com](https://www.adsense.google.com/) para el dominio del sitio.
+2. Cuando tengas el ID de editor (`ca-pub-…`), anótalo; **no lo inventes**.
+3. En AdSense → **Privacidad y mensajes** (Privacy & messaging):
+   - Configura el mensaje de **reglamentos europeos** (GDPR / EU user consent).
+   - Selecciona proveedores de tecnología publicitaria (ATPs) o el conjunto habitual.
+   - Publica el mensaje para el sitio/dominio correcto.
+4. Crea unidades de anuncio (anuncios automáticos y/o bloques) y copia los IDs numéricos de unidad.
+5. Actualiza `public/ads.txt` con la **línea exacta** que AdSense indique (sustituye el stub comentado). Comprueba `https://turismoengijon.com/ads.txt` tras el deploy.
+6. En el proyecto, configura `.env` con `REACT_APP_ADSENSE_ENABLED=true`, `REACT_APP_ADSENSE_CLIENT` y los `REACT_APP_ADSENSE_SLOT_*` reales.
+7. Rebuild + deploy (solo cuando autorices publicar).
+8. Verifica en un navegador del EEE:
+   - Aparece el mensaje de Privacy & Messaging (si aplica a tu tráfico).
+   - No se solicitan consentimientos publicitarios duplicados de forma confusa.
+   - Network: `adsbygoogle.js` / `googlesyndication` solo tras activar la config.
+   - Firebase Analytics sigue respetando «Solo necesarias» / «Aceptar analítica».
+
+Documentación oficial:
+
+- [Requisitos de consentimiento / CMP](https://support.google.com/adsense/answer/7670013?hl=es)
+- [Requisitos CMP certificada EEE/UK/CH](https://support.google.com/adsense/answer/13554116?hl=es)
+- [Acerca de Privacy & messaging](https://support.google.com/adsense/answer/10924669?hl=es)
+- [ads.txt](https://support.google.com/adsense/answer/7532444?hl=es)
+
+### Lo que el código ya hace
+
+- Carga `adsbygoogle.js` **solo** si AdSense está activo en env.
+- `AdSlot` no pinta placeholders si faltan IDs.
+- Banner casero limitado a analítica, con texto que aclara el alcance.
+- Políticas de privacidad/cookies actualizadas para describir AdSense de forma preparatoria.
+
+### Lo que el código no puede hacer
+
+- Aprobar la cuenta AdSense.
+- Configurar Privacy & Messaging en tu consola.
+- Garantizar cumplimiento legal (asesoramiento profesional si lo necesitas).
+- Inventar `ca-pub` o líneas `ads.txt`.
 
 ## EmailJS (formulario de contacto)
 
-En `src/components/Contacto.js` deben coincidir:
-
-- Service ID real (`service_...`, no solo el nombre visible)
-- Template ID
-- Public Key
-- Variables del template = `name` del formulario (`asunto`, `email`, `mensaje`)
+En `src/components/Contacto.js` deben coincidir Service ID, Template ID, Public Key y variables del template.
 
 ## Cómo añadir un artículo nuevo
 
-1. Crea `src/content/articles/MiGuia.js` (componente React con el cuerpo).
+1. Crea `src/content/articles/MiGuia.js`.
 2. Registra el loader en `src/content/articleLoaders.js`.
-3. Añade metadatos en `src/data/articleRegistry.js` (slug, SEO, fechas reales, FAQs, related).
-4. Asigna imagen en `ARTICLE_HERO_SRC` dentro de `src/images/assets.js`.
-5. Añade la ruta a `src/data/sitemap-paths.json`.
-6. Enlázalo desde hub/footer/artículos relacionados si corresponde.
+3. Metadatos en `src/data/articleRegistry.js`.
+4. Imagen en `ARTICLE_HERO_SRC` (`src/images/assets.js`).
+5. Ruta en `src/data/sitemap-paths.json`.
+6. Enlaces internos si corresponde.
 7. `npm run build` y despliega.
 
-## Pendiente técnico conocido (no bloqueante para operar)
+## Pendiente técnico conocido
 
-- Soft 404: Firebase reescribe todo a `index.html` (HTTP 200). La UI muestra 404 + `noindex`, pero el código HTTP no es 404 real.
-- Prerender/SSG no implementado (migración grande; valorar solo si GSC muestra problemas de indexación).
-- Compresión WebP masiva de imágenes: pendiente de optimización de assets.
+- Soft 404 en Firebase (rewrite a `index.html`).
+- Prerender/SSG no implementado.
+- Compresión WebP masiva pendiente.

@@ -9,7 +9,7 @@ function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__inner">
-        <AdSlot variant="footer" slotKey="global-footer" />
+        <AdSlot variant="footer" unitKey="footer" />
 
         <figure className="site-footer__photo">
           <img src={FOOTER_STRIP.src} alt={FOOTER_STRIP.alt} width={1200} height={360} loading="lazy" decoding="async" />

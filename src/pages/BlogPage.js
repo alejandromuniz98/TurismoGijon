@@ -33,7 +33,7 @@ export default function BlogPage() {
           </p>
         </header>
 
-        <AdSlot variant="banner" slotKey="blog-top" />
+        <AdSlot variant="banner" unitKey="blogTop" />
 
         <ul className="blog-archive">
           {sorted.map((a) => (
@@ -67,7 +67,7 @@ export default function BlogPage() {
           ))}
         </ul>
 
-        <AdSlot variant="footer" slotKey="blog-footer" />
+        <AdSlot variant="footer" unitKey="blogFooter" />
       </div>
     </main>
   );

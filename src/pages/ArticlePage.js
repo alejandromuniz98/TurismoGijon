@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import SEO from "../components/seo/SEO";
 import Breadcrumbs from "../components/layout/Breadcrumbs";
 import AdSlot from "../components/ads/AdSlot";
+import { canRenderAdUnit } from "../config/ads";
 import { getArticleBySlug, getRelatedArticles } from "../data/articleRegistry";
 import { articleLoaders } from "../content/articleLoaders";
 import { SITE_NAME, SITE_URL, absoluteUrl } from "../config/site";
@@ -102,6 +103,7 @@ export default function ArticlePage() {
   };
 
   const related = getRelatedArticles(meta.relatedSlugs);
+  const showAside = related.length > 0 || canRenderAdUnit("articleSide");
 
   return (
     <main className="page article-page">
@@ -150,7 +152,7 @@ export default function ArticlePage() {
             />
           </figure>
 
-          <AdSlot variant="banner" slotKey={`article-${meta.slug}-top`} />
+          <AdSlot variant="banner" unitKey="articleTop" />
 
           <div className="article-layout">
             <div className="article-body prose" itemProp="articleBody">
@@ -159,35 +161,37 @@ export default function ArticlePage() {
               </Suspense>
             </div>
 
-            <aside className="article-aside" aria-label="Publicidad y enlaces">
-              <AdSlot variant="sidebar" slotKey={`article-${meta.slug}-side`} />
-              {related.length > 0 && (
-                <div className="related-box">
-                  <h2 className="related-box__title">Artículos relacionados</h2>
-                  <ul className="related-box__list">
-                    {related.map((a) => (
-                      <li key={a.slug}>
-                        <Link className="related-box__row" to={`/${a.slug}`}>
-                          <img
-                            className="related-box__thumb"
-                            src={a.heroSrc}
-                            alt=""
-                            width={56}
-                            height={56}
-                            loading="lazy"
-                            decoding="async"
-                          />
-                          <span className="related-box__row-title">{a.title}</span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </aside>
+            {showAside && (
+              <aside className="article-aside" aria-label="Enlaces y publicidad">
+                <AdSlot variant="sidebar" unitKey="articleSide" />
+                {related.length > 0 && (
+                  <div className="related-box">
+                    <h2 className="related-box__title">Artículos relacionados</h2>
+                    <ul className="related-box__list">
+                      {related.map((a) => (
+                        <li key={a.slug}>
+                          <Link className="related-box__row" to={`/${a.slug}`}>
+                            <img
+                              className="related-box__thumb"
+                              src={a.heroSrc}
+                              alt=""
+                              width={56}
+                              height={56}
+                              loading="lazy"
+                              decoding="async"
+                            />
+                            <span className="related-box__row-title">{a.title}</span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </aside>
+            )}
           </div>
 
-          <AdSlot variant="inline" slotKey={`article-${meta.slug}-mid`} />
+          <AdSlot variant="inline" unitKey="articleMid" />
 
           <section className="article-faq" aria-labelledby="faq-heading">
             <h2 id="faq-heading">Preguntas frecuentes</h2>

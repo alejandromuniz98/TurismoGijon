@@ -73,7 +73,7 @@ export default function SectionHubPage({
           ))}
         </div>
 
-        <AdSlot variant="inline" slotKey={`hub-${canonicalPath}`} />
+        <AdSlot variant="inline" unitKey="hubInline" />
       </div>
     </main>
   );

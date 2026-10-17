@@ -254,11 +254,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PUBLICIDAD */}
-        <AdSlot
-          variant="banner"
-          slotKey="home-mid"
-        />
+        <AdSlot variant="banner" unitKey="homeMid" />
 
         {/* ARTÍCULOS */}
         <section
@@ -412,11 +408,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* PUBLICIDAD FINAL */}
-        <AdSlot
-          variant="footer"
-          slotKey="home-footer"
-        />
+        <AdSlot variant="footer" unitKey="homeFooter" />
       </div>
     </main>
   );

@@ -82,7 +82,7 @@ export default function MapPage() {
           </li>
         </ul>
 
-        <AdSlot variant="banner" slotKey="map-bottom" />
+        <AdSlot variant="banner" unitKey="mapBottom" />
       </div>
     </main>
   );

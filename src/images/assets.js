@@ -57,9 +57,6 @@ export const SITE_MEDIA = {
     src: GijonCalidadVida,
     alt: "Vista panorámica de Gijón con la playa de San Lorenzo y el paseo marítimo",
   },
-  adPlaceholder: {
-    src: GijonCalidadVida,
-  },
 };
 
 /** OG por defecto (URL absoluta externa o path público). */

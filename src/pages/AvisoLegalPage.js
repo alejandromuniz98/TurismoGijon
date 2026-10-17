@@ -115,9 +115,12 @@ export default function AvisoLegalPage() {
 
           <h2>7. Publicidad y afiliación</h2>
           <p>
-            El sitio puede mostrar espacios publicitarios o contenidos patrocinados. En su caso, se procurará
-            identificarlos de forma clara. La relación con anunciantes o partners no altera la obligación del usuario de
-            contrastar información práctica antes de viajar.
+            El sitio está preparado para mostrar publicidad de terceros mediante Google AdSense u otros formatos
+            claramente identificados como publicidad. En la fecha de este aviso, la activación efectiva de anuncios
+            depende de la configuración y, en su caso, de la aprobación de la cuenta del editor; no se garantiza la
+            presencia de anuncios en todas las páginas. La relación con anunciantes o partners no altera la obligación
+            del usuario de contrastar información práctica antes de viajar. El tratamiento de datos asociado a la
+            publicidad se describe en la Política de privacidad y en la Política de cookies.
           </p>
 
           <h2>8. Protección de datos</h2>
@@ -141,7 +144,7 @@ export default function AvisoLegalPage() {
             <Link to="/contacto">Contacto</Link>.
           </p>
 
-          <p className="legal-meta">Última actualización: 14 de octubre de 2026.</p>
+          <p className="legal-meta">Última actualización: 17 de octubre de 2026.</p>
         </article>
       </div>
     </main>

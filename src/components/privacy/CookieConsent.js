@@ -9,8 +9,10 @@ import {
 import "../../styles/CookieConsent.css";
 
 /**
- * Banner de preferencias de cookies (analítica opcional).
- * Preferencia en localStorage vía src/config/consent.js.
+ * Banner de preferencias de cookies para analítica Firebase.
+ * No es una CMP certificada TCF ni gestiona el consentimiento publicitario de AdSense;
+ * ese consentimiento, cuando haya anuncios en el EEE/UK/CH, debe obtenerse con
+ * Google Privacy & Messaging (o otra CMP certificada por Google).
  */
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
@@ -78,8 +80,10 @@ export default function CookieConsent() {
           </p>
           <p>
             Usamos cookies técnicas necesarias para el funcionamiento del sitio. Si lo aceptas, también usamos Firebase
-            Analytics (Google) para medir el uso de la web de forma agregada. Más información en la{" "}
-            <Link to="/politica-cookies">Política de cookies</Link> y la{" "}
+            Analytics (Google) para medir el uso de la web de forma agregada. Este aviso solo gestiona la analítica; no
+            sustituye el consentimiento publicitario. Si en el futuro se muestran anuncios de Google AdSense en el EEE,
+            Reino Unido o Suiza, el consentimiento publicitario se solicitará mediante Google Privacy & Messaging (u otra
+            CMP certificada). Más información en la <Link to="/politica-cookies">Política de cookies</Link> y la{" "}
             <Link to="/politica-privacidad">Política de privacidad</Link>.
           </p>
         </div>

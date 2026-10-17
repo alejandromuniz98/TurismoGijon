@@ -48,9 +48,11 @@ export default function PoliticaCookiesPage() {
               (páginas visitadas, eventos, rendimiento).
             </li>
             <li>
-              <strong>Publicidad o personalización:</strong> si en el futuro se incorporan anuncios de terceros, estos
-              podrían emplear cookies propias. En tal caso se actualizará esta política y, cuando proceda, el mecanismo
-              de consentimiento.
+              <strong>Publicidad o personalización:</strong> cookies y tecnologías usadas para seleccionar, mostrar,
+              personalizar o medir anuncios (p. ej. Google AdSense y proveedores de tecnología publicitaria). Pueden
+              servir anuncios personalizados o no personalizados según el consentimiento prestado. En el EEE, Reino
+              Unido y Suiza, Google exige una CMP certificada e integrada con el TCF de IAB Europe para anuncios
+              personalizados.
             </li>
           </ul>
 
@@ -96,6 +98,17 @@ export default function PoliticaCookiesPage() {
                   <td>Carga de la cartografía del mapa turístico; el proveedor puede registrar peticiones técnicas</td>
                   <td>Según el proveedor de teselas</td>
                 </tr>
+                <tr>
+                  <td>Google AdSense / proveedores publicitarios (Google y ATPs)</td>
+                  <td>Publicidad (opcional; solo si está activada)</td>
+                  <td>
+                    Selección, personalización y medición de anuncios. El script publicitario no se carga mientras
+                    AdSense esté desactivado en la configuración del sitio. Cuando se active, el consentimiento
+                    publicitario en el EEE/UK/CH se gestionará con Google Privacy &amp; Messaging u otra CMP certificada,
+                    no con el banner de solo analítica
+                  </td>
+                  <td>Según Google y cada proveedor (pueden ser persistentes)</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -107,12 +120,28 @@ export default function PoliticaCookiesPage() {
 
           <h2>4. Cookies de terceros</h2>
           <p>
-            Al cargar servicios de terceros (analítica de Google, cartografía, tipografías o recursos externos), dichos
-            terceros pueden establecer cookies o recibir información técnica (dirección IP, tipo de navegador, etc.). Le
-            recomendamos consultar las políticas de privacidad de esos proveedores.
+            Al cargar servicios de terceros (analítica de Google, publicidad AdSense cuando esté activa, cartografía u
+            otros recursos externos), dichos terceros pueden establecer cookies o recibir información técnica (dirección
+            IP, tipo de navegador, etc.). Consulte las políticas de{" "}
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
+              privacidad de Google
+            </a>{" "}
+            y de{" "}
+            <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">
+              tecnologías publicitarias de Google
+            </a>
+            , así como la información de cada proveedor mostrada en la CMP cuando corresponda.
           </p>
 
-          <h2>5. Cómo gestionar o eliminar cookies</h2>
+          <h2>5. Publicidad personalizada y no personalizada</h2>
+          <p>
+            Cuando AdSense esté activo, Google podrá mostrar anuncios personalizados o no personalizados en función del
+            consentimiento y de la configuración del editor. Los anuncios no personalizados siguen pudiendo usar
+            información contextual (p. ej. contenido de la página) y datos técnicos limitados. Rechazar la publicidad no
+            esencial no debe impedirle navegar por el contenido editorial del sitio.
+          </p>
+
+          <h2>6. Cómo gestionar o eliminar cookies</h2>
           <p>
             Puede configurar su navegador para aceptar, rechazar o eliminar cookies. Las instrucciones habituales están
             disponibles en la ayuda de Chrome, Firefox, Safari, Edge u otros. Tenga en cuenta que bloquear cookies
@@ -121,19 +150,25 @@ export default function PoliticaCookiesPage() {
           </p>
           <p>
             También puede utilizar herramientas de exclusión o configuración ofrecidas por Google respecto a la
-            analítica, cuando estén disponibles.
+            analítica y a los anuncios personalizados, cuando estén disponibles.
           </p>
 
-          <h2>6. Preferencias en este sitio</h2>
+          <h2>7. Preferencias en este sitio</h2>
           <p>
-            Al visitar la web puede aceptar o rechazar las cookies de analítica mediante el banner de preferencias. Si
-            elige solo las necesarias, no se inicializará Firebase Analytics ni se enviarán eventos de medición. Puede
-            revisar o cambiar su elección en cualquier momento con el enlace <strong>Gestionar cookies</strong> del pie
-            de página. La preferencia se guarda en el navegador (almacenamiento local, clave{" "}
-            <code>tg_cookie_consent</code>).
+            <strong>Analítica:</strong> al visitar la web puede aceptar o rechazar las cookies de analítica mediante el
+            banner de preferencias. Si elige solo las necesarias, no se inicializará Firebase Analytics ni se enviarán
+            eventos de medición. Puede revisar o cambiar su elección con <strong>Gestionar cookies</strong> en el pie de
+            página. La preferencia se guarda en el navegador (clave <code>tg_cookie_consent</code>). Ese banner{" "}
+            <strong>no</strong> es una CMP certificada para publicidad ni sustituye el TCF de IAB Europe.
+          </p>
+          <p>
+            <strong>Publicidad:</strong> cuando el titular active Google AdSense y publique el mensaje de reglamentos
+            europeos en Privacy &amp; Messaging (u otra CMP certificada), el consentimiento publicitario se solicitará
+            por ese sistema. Retirar o modificar ese consentimiento debe reflejarse en el comportamiento de las etiquetas
+            publicitarias conforme a la CMP elegida.
           </p>
 
-          <h2>7. Actualizaciones</h2>
+          <h2>8. Actualizaciones</h2>
           <p>
             Esta política se revisará cuando cambien las cookies empleadas, los proveedores o la normativa aplicable. La
             fecha de la última actualización figura al final de esta página.
@@ -143,7 +178,7 @@ export default function PoliticaCookiesPage() {
             <Link to="/contacto">Contacto</Link>.
           </p>
 
-          <p className="legal-meta">Última actualización: 14 de octubre de 2026.</p>
+          <p className="legal-meta">Última actualización: 17 de octubre de 2026.</p>
         </article>
       </div>
     </main>

@@ -1,0 +1,7 @@
+# ads.txt - Turismo por Gijon
+# PENDIENTE (propietario): sustituye este archivo por la linea exacta que indique
+# Google AdSense para tu cuenta de editor. Ejemplo de formato (NO usar tal cual):
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+#
+# Hasta entonces, este archivo no autoriza vendedores publicitarios.
+# Documentacion: https://support.google.com/adsense/answer/7532444

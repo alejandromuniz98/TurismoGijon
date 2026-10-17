@@ -10,19 +10,6 @@
   padding: 2rem 1.25rem 1.25rem;
 }
 
-.site-footer .ad-slot {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.site-footer .ad-slot__label {
-  color: rgba(255, 255, 255, 0.55);
-}
-
-.site-footer .ad-slot__frame {
-  background: rgba(0, 0, 0, 0.2);
-}
-
 .site-footer__photo {
   margin: 0 0 1.5rem;
   border-radius: var(--radius);

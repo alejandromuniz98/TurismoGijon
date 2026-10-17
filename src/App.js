@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Contacto from "./components/Contacto";
 import CookieConsent from "./components/privacy/CookieConsent";
+import AdsenseBootstrap from "./components/ads/AdsenseBootstrap";
 import { getAnalyticsInstance } from "./components/firebase";
 import { CONSENT_CHANGED_EVENT, hasAnalyticsConsent } from "./config/consent";
 import "./App.css";
@@ -121,6 +122,7 @@ function AppRoutes() {
       </Suspense>
       <Footer />
       <CookieConsent />
+      <AdsenseBootstrap />
     </>
   );
 }
