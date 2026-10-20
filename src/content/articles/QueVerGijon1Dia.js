@@ -45,8 +45,8 @@ export default function QueVerGijon1Dia() {
         por la Cuesta del Cholo o por el ascensor que enlaza con la zona alta (horarios según temporada; confirma en
         fuentes oficiales el día de tu visita). Una vez arriba, dedica tiempo a perderte sin ruta rígida: la Plaza de
         Jovellanos, la iglesia de San Pedro, las casas de colores y los miradores improvisados entre callejuelas ofrecen
-        fotografías muy distintas a las del paseo marítimo. Este entramado explica por qué tantas búsquedas de{" "}
-        <strong>qué ver en Gijón</strong> acaban siempre en Cimavilla: concentra historia, escala humana y vistas.
+        fotografías muy distintas a las del paseo marítimo. Por eso casi todo el mundo empieza por{" "}
+        <strong>Cimavilla</strong> en su primera visita: concentra historia, escala humana y vistas.
       </p>
       <p>
         Para comer, muchos visitantes eligen quedarse en el barrio o bajar hacia el puerto. Sidrerías, tabernas con

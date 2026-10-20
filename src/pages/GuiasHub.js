@@ -12,7 +12,7 @@ export default function GuiasHub() {
     <SectionHubPage
       title="Guías de viaje a Gijón: itinerarios y consejos"
       metaTitle="Guías turismo Gijón | Itinerarios y planes por días"
-      metaDescription="Guías largas para organizar tu viaje: Gijón en 1 o 2 días, con niños, gratis o con lluvia. Contenido SEO útil y actualizable."
+      metaDescription="Guías largas para organizar tu viaje: Gijón en 1 o 2 días, con niños, gratis o con lluvia. Consejos prácticos y actualizados."
       canonicalPath="/guias"
       breadcrumbTrail={[{ label: "Guías" }]}
       keywords={["guías Gijón", "turismo Gijón", "itinerario Gijón", "viaje Gijón"]}

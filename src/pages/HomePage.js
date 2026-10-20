@@ -328,16 +328,15 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* INTRO SEO */}
         <section
           className="home-intro prose"
-          aria-labelledby="intro-seo"
+          aria-labelledby="intro-gijon"
         >
           <span className="section-kicker">
             Conoce Gijón
           </span>
 
-          <h2 id="intro-seo">
+          <h2 id="intro-gijon">
             Una ciudad para disfrutar del mar, la gastronomía y la cultura
           </h2>
 

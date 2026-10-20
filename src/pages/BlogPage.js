@@ -28,8 +28,8 @@ export default function BlogPage() {
         <header className="hub-header">
           <h1>Blog: turismo Gijón</h1>
           <p className="hub-lead">
-            Artículos extensos pensados para buscadores y para lectores reales: listas, tablas comparativas, preguntas
-            frecuentes y enlaces entre guías.
+            Guías detalladas para planificar tu visita: listas, tablas comparativas, preguntas frecuentes y enlaces entre
+            artículos.
           </p>
         </header>
 
