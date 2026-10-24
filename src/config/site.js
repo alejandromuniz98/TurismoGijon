@@ -22,5 +22,5 @@ export const DEFAULT_OG_IMAGE = DEFAULT_OG_IMAGE_URL;
 export const ORGANIZATION = {
   name: SITE_NAME,
   url: SITE_URL,
-  logo: `${SITE_URL}/logo192.png`,
+  logo: `${SITE_URL}/favicon.ico`,
 };
